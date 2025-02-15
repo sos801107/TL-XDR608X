@@ -14,12 +14,12 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
+#echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
 echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
 echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
 
 mkdir -p files/etc/openclash/core
 wget -qO- https://raw.githubusercontent.com/vernesong/OpenClash/refs/heads/core/dev/meta/clash-linux-arm64.tar.gz | tar xOvz > files/etc/openclash/core/clash_meta
 chmod +x files/etc/openclash/core/clash_meta
-wget -qO- https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat > files/etc/openclash/GeoIP.dat
-wget -qO- https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat > files/etc/openclash/GeoSite.dat
+#wget -qO- https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat > files/etc/openclash/GeoIP.dat
+#wget -qO- https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat > files/etc/openclash/GeoSite.dat
