@@ -26,7 +26,7 @@ echo -e "msgstr \"存储\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
 
 # 移除要替换的包
-# rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardhome}
+rm -rf feeds/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir}
 rm -rf feeds/luci/packages/luci-app-ssr-plus
 rm -rf feeds/luci/packages/luci-i18n-ssr-plus-zh-cn
 rm -rf feeds/luci/applications/luci-app-ssr-plus
