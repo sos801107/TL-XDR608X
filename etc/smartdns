@@ -33,10 +33,10 @@ config smartdns
 	option log_output_mode 'file'
 	option auto_update_week_time '*'
 	option auto_update_day_time '5'
-	option enabled '1'
 	option seconddns_port '5335'
+	option enabled '0'
 	option old_port '6053'
-	option old_enabled '1'
+	option old_enabled '0'
 	option old_auto_set_dnsmasq '1'
 
 config server
