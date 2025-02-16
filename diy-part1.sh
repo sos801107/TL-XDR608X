@@ -25,7 +25,7 @@ chmod +x files/etc/openclash/core/clash_meta
 #wget -qO- https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat > files/etc/openclash/GeoSite.dat
 
 #wget -qO- https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/main_router/openclash > files/etc/config/openclash
-wget -qO- https://github.com/sos801107/TP-Link-TL-XDR6086/blob/main/etc/openclash > files/etc/config/openclash
-wget -qO- https://github.com/sos801107/TP-Link-TL-XDR6086/blob/main/etc/mosdns > files/etc/config/mosdns
-wget -qO- https://github.com/sos801107/TP-Link-TL-XDR6086/blob/main/etc/smartdns > files/etc/config/smartdns
+wget -qO- https://raw.githubusercontent.com/sos801107/TP-Link-TL-XDR6086/refs/heads/main/etc/openclash > files/etc/config/openclash
+wget -qO- https://raw.githubusercontent.com/sos801107/TP-Link-TL-XDR6086/refs/heads/main/etc/mosdns > files/etc/config/mosdns
+wget -qO- https://raw.githubusercontent.com/sos801107/TP-Link-TL-XDR6086/refs/heads/main/etc/smartdns > files/etc/config/smartdns
 #https://raw.githubusercontent.com/sos801107/TP-Link-TL-XDR6086/refs/heads/main/etc/mosdns
