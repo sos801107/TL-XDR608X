@@ -43,3 +43,6 @@ cp -af feeds/small/luci-app-passwall/*  feeds/luci/applications/luci-app-passwal
 rm -rf feeds/luci/applications/luci-app-openclash/*
 cp -af feeds/small/luci-app-openclash/*  feeds/luci/applications/luci-app-openclash/
 
+./scripts/feeds clean
+./scripts/feeds update -a
+./scripts/feeds install -a
