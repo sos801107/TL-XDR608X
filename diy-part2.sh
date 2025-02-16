@@ -27,7 +27,7 @@ sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/z
 
 # 移除要替换的包
 # rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardhome}
-
+rm -rf feeds/luci/applications/luci-app-ssr-plus/*
 ##更新FQ
 rm -rf feeds/luci/themes/luci-theme-argon/*
 cp -af feeds/kenzo/luci-theme-argon/*  feeds/luci/themes/luci-theme-argon/
