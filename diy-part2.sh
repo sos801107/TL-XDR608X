@@ -27,7 +27,10 @@ sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/z
 
 # 移除要替换的包
 # rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box,adguardhome}
+rm -rf feeds/luci/packages/luci-app-ssr-plus
+rm -rf feeds/luci/packages/luci-i18n-ssr-plus-zh-cn
 rm -rf feeds/luci/applications/luci-app-ssr-plus
+rm -rf feeds/luci/applications/luci-i18n-ssr-plus-zh-cn
 rm -rf feeds/luci/applications/luci-app-wol
 
 ##更新FQ
