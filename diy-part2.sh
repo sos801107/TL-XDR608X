@@ -33,6 +33,22 @@ rm -rf feeds/luci/applications/luci-app-ssr-plus
 rm -rf feeds/luci/applications/luci-i18n-ssr-plus-zh-cn
 rm -rf feeds/luci/applications/luci-app-wol
 
+# 将packages源的相关文件替换成passwall_packages源的
+rm -rf feeds/packages/net/xray-core
+rm -rf feeds/packages/net/v2ray-geodata
+rm -rf feeds/packages/net/sing-box
+rm -rf feeds/packages/net/chinadns-ng
+rm -rf feeds/packages/net/dns2socks
+rm -rf feeds/packages/net/dns2tcp
+rm -rf feeds/packages/net/microsocks
+cp -r feeds/small/xray-core feeds/packages/net
+cp -r feeds/small/v2ray-geodata feeds/packages/net
+cp -r feeds/small/sing-box feeds/packages/net
+cp -r feeds/small/chinadns-ng feeds/packages/net
+cp -r feeds/small/dns2socks feeds/packages/net
+cp -r feeds/small/dns2tcp feeds/packages/net
+cp -r feeds/small/microsocks feeds/packages/net
+
 ##更新FQ
 rm -rf feeds/luci/themes/luci-theme-argon/*
 cp -af feeds/kenzo/luci-theme-argon/*  feeds/luci/themes/luci-theme-argon/
