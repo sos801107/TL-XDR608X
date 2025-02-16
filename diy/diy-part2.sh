@@ -27,19 +27,19 @@ sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/z
 
 # 移除要替换的包
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
-# rm -rf feeds/small/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir}
-# rm -rf feeds/small/luci-app-ssr-plus
-# rm -rf feeds/small/luci-i18n-ssr-plus-zh-cn
+rm -rf feeds/smpackage/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir}
+# rm -rf feeds/smpackage/luci-app-ssr-plus
+# rm -rf feeds/smpackage/luci-i18n-ssr-plus-zh-cn
 # rm -rf feeds/luci/applications/luci-app-ssr-plus
 # rm -rf feeds/luci/applications/luci-i18n-ssr-plus-zh-cn
 # rm -rf feeds/luci/applications/luci-app-wol
 
 ##更新FQ
-# rm -rf feeds/luci/themes/luci-theme-argon/*
-# cp -af feeds/kenzo/luci-theme-argon/*  feeds/luci/themes/luci-theme-argon/
+rm -rf feeds/luci/themes/luci-theme-argon/*
+cp -af feeds/smpackage/luci-theme-argon/*  feeds/luci/themes/luci-theme-argon/
 
-# rm -rf feeds/luci/applications/luci-app-passwall/*
-# cp -af feeds/small/luci-app-passwall/*  feeds/luci/applications/luci-app-passwall/
+rm -rf feeds/luci/applications/luci-app-passwall/*
+cp -af feeds/smpackage/luci-app-passwall/*  feeds/luci/applications/luci-app-passwall/
 
-# rm -rf feeds/luci/applications/luci-app-openclash/*
-# cp -af feeds/small/luci-app-openclash/*  feeds/luci/applications/luci-app-openclash/
+rm -rf feeds/luci/applications/luci-app-openclash/*
+cp -af feeds/smpackage/luci-app-openclash/*  feeds/luci/applications/luci-app-openclash/
