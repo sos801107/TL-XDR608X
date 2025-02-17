@@ -21,7 +21,7 @@ echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.d
 mkdir -p files/etc/openclash/core
 wget -qO- https://raw.githubusercontent.com/vernesong/OpenClash/refs/heads/core/dev/meta/clash-linux-arm64.tar.gz | tar xOvz > files/etc/openclash/core/clash_meta
 chmod +x files/etc/openclash/core/clash_meta
-wget -qO- https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat > files/etc/openclash/GeoIP.dat
+#wget -qO- https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat > files/etc/openclash/GeoIP.dat
 wget -qO- https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat > files/etc/openclash/GeoSite.dat
 
 mkdir -p files/etc/config
