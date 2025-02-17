@@ -33,6 +33,7 @@ rm -rf feeds/small/luci-i18n-ssr-plus-zh-cn
 rm -rf feeds/luci/applications/luci-app-ssr-plus
 rm -rf feeds/luci/applications/luci-i18n-ssr-plus-zh-cn
 rm -rf feeds/luci/applications/luci-app-wol
+rm -rf feeds/luci/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir,shadowsocksr-libev-ssr-server}
 
 # 将packages源的相关文件替换成passwall_packages源的
 rm -rf feeds/packages/net/xray-core
