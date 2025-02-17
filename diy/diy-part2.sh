@@ -35,11 +35,11 @@ rm -rf feeds/smpackage/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-loca
 # rm -rf feeds/luci/applications/luci-app-wol
 
 ##更新FQ
-rm -rf feeds/luci/themes/luci-theme-argon/*
-cp -af feeds/smpackage/luci-theme-argon/*  feeds/luci/themes/luci-theme-argon/
+# rm -rf feeds/luci/themes/luci-theme-argon/*
+# cp -af feeds/smpackage/luci-theme-argon/*  feeds/luci/themes/luci-theme-argon/
 
-rm -rf feeds/luci/applications/luci-app-passwall/*
-cp -af feeds/smpackage/luci-app-passwall/*  feeds/luci/applications/luci-app-passwall/
+# rm -rf feeds/luci/applications/luci-app-passwall/*
+# cp -af feeds/smpackage/luci-app-passwall/*  feeds/luci/applications/luci-app-passwall/
 
-rm -rf feeds/luci/applications/luci-app-openclash/*
-cp -af feeds/smpackage/luci-app-openclash/*  feeds/luci/applications/luci-app-openclash/
+# rm -rf feeds/luci/applications/luci-app-openclash/*
+# cp -af feeds/smpackage/luci-app-openclash/*  feeds/luci/applications/luci-app-openclash/
