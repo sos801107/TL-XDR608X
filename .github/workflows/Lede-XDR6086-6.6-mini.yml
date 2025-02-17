@@ -120,7 +120,7 @@ jobs:
       run: |
         rm -rf ./ARM_Out
         mkdir -p ./ARM_Out/
-        cp -a ./openwrt/.config ./ARM_Out/xdr6086.config
+        cp -a ./openwrt/.config ./ARM_Out/xdr6086-mini.config
         
         getmd5()
         {
@@ -142,7 +142,7 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         name: xdr6086-config
-        path: ARM_Out/xdr6086.config
+        path: ARM_Out/xdr6086-mini.config
  
     - name: Upload Packages
       uses: actions/upload-artifact@main
