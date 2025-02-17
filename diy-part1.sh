@@ -29,5 +29,6 @@ wget -qO- https://raw.githubusercontent.com/sos801107/TP-Link-TL-XDR6086/refs/he
 wget -qO- https://raw.githubusercontent.com/sos801107/TP-Link-TL-XDR6086/refs/heads/main/etc/mosdns > files/etc/config/mosdns
 wget -qO- https://raw.githubusercontent.com/sos801107/TP-Link-TL-XDR6086/refs/heads/main/etc/smartdns > files/etc/config/smartdns
 
-#sed -i 's/coolsnowwolf\/luci/openwrt\/luci/g' ./feeds.conf.default
-#sed -i 's/openwrt-23.05/openwrt-24.10/g' ./feeds.conf.default
+#luci openwrt-24.10
+sed -i 's/coolsnowwolf\/luci/immortalwrt\/luci/g' ./feeds.conf.default
+sed -i 's/openwrt-23.05/openwrt-24.10/g' ./feeds.conf.default
