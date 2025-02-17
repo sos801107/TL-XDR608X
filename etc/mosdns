@@ -1,4 +1,3 @@
-
 config mosdns 'config'
 	option listen_port '5335'
 	option log_level 'error'
@@ -46,4 +45,3 @@ config mosdns 'config'
 	list ad_source 'https://raw.githubusercontent.com/Cats-Team/AdRules/main/mosdns_adrules.txt'
 	option enabled '0'
 	option configfile '/var/etc/mosdns.json'
-
