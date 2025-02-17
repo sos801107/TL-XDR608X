@@ -78,10 +78,10 @@ jobs:
         ./scripts/feeds install -a
         
         ## 强制默认r2s/r4s/r5s编译内核为6.6  
-        sed -i "s/KERNEL_PATCHVER:=*.*/KERNEL_PATCHVER:=6.6/g" target/linux/mediatek/Makefile
-        sed -i "s/KERNEL_PATCHVER=*.*/KERNEL_PATCHVER=6.6/g" target/linux/mediatek/Makefile        
+       # sed -i "s/KERNEL_PATCHVER:=*.*/KERNEL_PATCHVER:=6.6/g" target/linux/mediatek/Makefile
+       # sed -i "s/KERNEL_PATCHVER=*.*/KERNEL_PATCHVER=6.6/g" target/linux/mediatek/Makefile        
 
-        sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='TL-XDR6086-$(date +%Y%m%d)'/g" package/lean/default-settings/files/zzz-default-settings           
+       # sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='TL-XDR6086-$(date +%Y%m%d)'/g" package/lean/default-settings/files/zzz-default-settings           
       
     - name: Load custom configuration
       run: |
@@ -129,7 +129,7 @@ jobs:
         md5=`echo ${md5:0:10}`
         }
         
-        rom=openwrt/bin/targets/mediatek/filogic/openwrt-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.bin
+        rom=openwrt/bin/targets/mediatek/filogic/istoreos-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.bin
         getmd5 $rom        
         cp -a $rom ./ARM_Out/TP-Link_TL-XDR6086-6.6-$(date +"%Y.%m.%d-%H%M").bin             
     - name: Upload Firmwares
