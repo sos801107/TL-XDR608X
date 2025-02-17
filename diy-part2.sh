@@ -26,7 +26,8 @@ echo -e "msgstr \"存储\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
 
 # 移除要替换的包
-rm -rf feeds/small/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir}
+rm -rf feeds/small/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir,shadowsocksr-libev-ssr-server}
+rm -rf feeds/luci/applications/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir,shadowsocksr-libev-ssr-server}
 rm -rf feeds/small/luci-app-ssr-plus
 rm -rf feeds/small/luci-i18n-ssr-plus-zh-cn
 rm -rf feeds/luci/applications/luci-app-ssr-plus
@@ -42,7 +43,6 @@ rm -rf feeds/packages/net/dns2socks
 rm -rf feeds/packages/net/dns2tcp
 rm -rf feeds/packages/net/microsocks
 cp -r feeds/small/xray-core feeds/packages/net
-cp -r feeds/small/v2ray-geodata feeds/packages/net
 cp -r feeds/small/sing-box feeds/packages/net
 cp -r feeds/small/chinadns-ng feeds/packages/net
 cp -r feeds/small/dns2socks feeds/packages/net
@@ -59,6 +59,3 @@ cp -af feeds/small/luci-app-passwall/*  feeds/luci/applications/luci-app-passwal
 rm -rf feeds/luci/applications/luci-app-openclash/*
 cp -af feeds/small/luci-app-openclash/*  feeds/luci/applications/luci-app-openclash/
 
-#./scripts/feeds clean
-#./scripts/feeds update -a
-#./scripts/feeds install -a
