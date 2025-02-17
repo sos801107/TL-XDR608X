@@ -26,13 +26,14 @@ echo -e "msgstr \"存储\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
 
 # 移除要替换的包
-rm -rf feeds/small/shadowsocksr-libev
-rm -rf feeds/luci/applications/shadowsocksr-libev
-rm -rf feeds/small/luci-app-ssr-plus
-rm -rf feeds/small/luci-i18n-ssr-plus-zh-cn
-rm -rf feeds/luci/applications/luci-app-ssr-plus
-rm -rf feeds/luci/applications/luci-i18n-ssr-plus-zh-cn
-rm -rf feeds/luci/applications/luci-app-wol
+rm -rf feeds/small/{shadowsocksr-libev,shadowsocks-rust,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-wol}
+rm -rf feeds/luci/applications/{shadowsocksr-libev,shadowsocks-rust,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-wol}
+
+#rm -rf feeds/small/luci-app-ssr-plus
+#rm -rf feeds/small/luci-i18n-ssr-plus-zh-cn
+#rm -rf feeds/luci/applications/luci-app-ssr-plus
+#rm -rf feeds/luci/applications/luci-i18n-ssr-plus-zh-cn
+#rm -rf feeds/luci/applications/luci-app-wol
 #rm -rf feeds/luci/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir,shadowsocksr-libev-ssr-server}
 
 # 将packages源的相关文件替换成passwall_packages源的
