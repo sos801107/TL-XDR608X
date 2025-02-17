@@ -20,9 +20,9 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/xdr6086-mini.config
-  DIY_P1_SH: diy/diy-part1-mini.sh
-  DIY_P2_SH: diy/diy-part2-mini.sh
+  CONFIG_FILE: xdr6086-mini.config
+  DIY_P1_SH: diy-part1-mini.sh
+  DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -120,7 +120,7 @@ jobs:
       run: |
         rm -rf ./ARM_Out
         mkdir -p ./ARM_Out/
-        cp -a ./openwrt/.config ./ARM_Out/xdr6086-mini.config
+        cp -a ./openwrt/.config ./ARM_Out/xdr6086.config
         
         getmd5()
         {
@@ -142,7 +142,7 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         name: xdr6086-config
-        path: ARM_Out/xdr6086-mini.config
+        path: ARM_Out/xdr6086.config
  
     - name: Upload Packages
       uses: actions/upload-artifact@main
