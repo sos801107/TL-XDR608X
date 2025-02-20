@@ -34,5 +34,5 @@ mkdir -p files/etc/opkg
 wget -qO- https://raw.githubusercontent.com/sos801107/TP-Link-TL-XDR6086/refs/heads/main/etc/distfeeds.conf > files/etc/opkg/distfeeds.conf
 
 #luci openwrt-24.10
-#sed -i 's/coolsnowwolf\/luci/openwet\/luci/g' ./feeds.conf.default
-#sed -i 's/openwrt-23.05/openwrt-24.10/g' ./feeds.conf.default
+sed -i 's/coolsnowwolf\/luci/openwet\/luci/g' ./feeds.conf.default
+sed -i 's/openwrt-23.05/openwrt-24.10/g' ./feeds.conf.default
