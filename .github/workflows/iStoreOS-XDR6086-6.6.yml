@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt Builder
+name: iStoreOS-XDR6086-6.6
 
 on:
   repository_dispatch:
