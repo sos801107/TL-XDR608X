@@ -64,7 +64,8 @@ cp -r feeds/small/luci-app-passwall feeds/luci/applications/luci-app-passwall
 cp -r feeds/small/luci-app-openclash feeds/luci/applications/luci-app-openclash
 # istoreos-theme
 rm -rf feeds/luci/themes/luci-theme-argon
-git clone https://github.com/zijieKwok/istoreos-theme feeds/luci/themes/luci-theme-argon
+cp -r feeds/theme/luci-theme-argon feeds/luci/themes/luci-theme-argon
+
 #cp -r feeds/kenzo/luci-theme-argon feeds/luci/themes/luci-theme-argon
 
 
