@@ -59,13 +59,14 @@ cp -r feeds/small/microsocks feeds/packages/net
 
 
 ##更新FQ
-rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-openclash}
+rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-openclash,luci-app-turboacc}
 cp -r feeds/small/luci-app-passwall feeds/luci/applications/luci-app-passwall
 cp -r feeds/small/luci-app-openclash feeds/luci/applications/luci-app-openclash
+cp -r feeds/turboacc/luci-app-turboacc feeds/luci/applications/luci-app-turboacc
 # istoreos-theme
 rm -rf feeds/luci/themes/luci-theme-argon
 cp -r feeds/theme/luci-theme-argon feeds/luci/themes/luci-theme-argon
-
+turboacc
 #cp -r feeds/kenzo/luci-theme-argon feeds/luci/themes/luci-theme-argon
 
 
