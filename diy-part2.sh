@@ -68,7 +68,7 @@ cp -r feeds/turboacc/luci-app-turboacc feeds/luci/applications/luci-app-turboacc
 # istoreos-theme
 rm -rf feeds/luci/themes/luci-theme-argon
 cp -r feeds/theme/luci-theme-argon feeds/luci/themes/luci-theme-argon
-turboacc
+
 #cp -r feeds/kenzo/luci-theme-argon feeds/luci/themes/luci-theme-argon
 
 
