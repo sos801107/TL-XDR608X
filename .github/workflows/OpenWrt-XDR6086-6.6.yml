@@ -11,7 +11,7 @@
 # See /LICENSE for more information.
 #
 
-name: iStoreOS-XDR6086-6.6
+name: OpenWrt-XDR6086-6.6
 
 on:
   repository_dispatch:
