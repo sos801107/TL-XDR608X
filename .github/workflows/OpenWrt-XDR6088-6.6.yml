@@ -11,7 +11,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt-XDR6086-6.6
+name: OpenWrt-XDR6088-6.6
 
 on:
   repository_dispatch:
