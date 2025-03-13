@@ -24,7 +24,7 @@ env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: xdr6086-mini2.config
+  CONFIG_FILE: xdr6086-mini.config
   DIY_P1_SH: diy-part1-mini.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -133,7 +133,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=OpenWrt-MT7986-6.6-$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+        echo "release_tag=OpenWrt-XDR6086-6.6-$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
         touch release.txt
         [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
