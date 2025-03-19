@@ -8,7 +8,7 @@ on:
 permissions: write-all
 
 env:
-  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  GITHUB_TOKEN: ${{secrets.LEO_TOKEN}}
 
 jobs:
   auto_clean:
