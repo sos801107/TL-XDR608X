@@ -1,29 +1,21 @@
-name: Delete-1day
+name: Cache-Clean
 
-on: 
-  repository_dispatch:
+on:
+  schedule:
+    - cron: 0 20 * * 0
   workflow_dispatch:
 
-# 定时触发编译
-#  schedule:
-#   - cron: 0 0 * * 0
+permissions: write-all
+
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 jobs:
-  Delete-1day:
-    runs-on: ubuntu-20.04
+  auto_clean:
+    runs-on: ubuntu-22.04
     steps:
-    - name: Clone Repository
-      uses: actions/checkout@v4
+      - name: Checkout Projects
+        uses: actions/checkout@main
 
-    - name: Set git
-      run : |
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git config --global user.name "github-actions[bot]"
-        sudo timedatectl set-timezone "Asia/Shanghai"
-
-    - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@main
-      continue-on-error: true
-      with:
-        retain_days: 1
-        keep_minimum_runs: 0
+      - name: Cache Clean
+        run: gh cache delete --all
