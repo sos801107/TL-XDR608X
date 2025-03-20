@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
@@ -64,7 +64,7 @@ cp -r feeds/small/luci-app-passwall feeds/luci/applications/luci-app-passwall
 cp -r feeds/small/luci-app-openclash feeds/luci/applications/luci-app-openclash
 
 #rm -rf feeds/luci/applications/luci-app-turboacc
-#cp -r feeds/turboacc/luci-app-turboacc feeds/luci/applications/luci-app-turboacc
+cp -r feeds/turboacc/luci-app-turboacc feeds/luci/applications/luci-app-turboacc
 
 # istoreos-theme
 rm -rf feeds/luci/themes/luci-theme-argon
