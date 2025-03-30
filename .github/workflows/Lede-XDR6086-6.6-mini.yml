@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: Lede-XDR6086-6.6-mini-test
+name: Lede-XDR6086-6.6-mini
 #CI计划
 on:
   #自动编译：当Auto-Clean运行完成后
