@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: Lede-XDR6088-6.6-mini-test
+name: Lede-XDR6088-6.6-mini
 
 #CI计划
 on:
