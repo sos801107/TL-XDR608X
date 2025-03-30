@@ -25,7 +25,7 @@ https://github.com/sos801107/TL-XDR608X/tree/main/UBOOT
 https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/UBOOT/immortalwrt-24.10-snapshot-r32679-687c2906ac-mediatek-filogic-tplink_tl-xdr6086-initramfs-recovery.itb
 
 如果还不行，就换下三合一的UBOOT的，刷入后再换回来就可以。
-
+进入UBOOT 后打开http://192.168.1.1/uboot.html 上传新的UBOOT就可以更换
 https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/UBOOT/Uboot-3ro1.7z
 
 以下为官方OPENWRT截图：
