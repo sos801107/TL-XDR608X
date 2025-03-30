@@ -22,7 +22,8 @@ https://github.com/sos801107/TL-XDR608X/tree/main/UBOOT
 
 用这个UBOOT直接入官方和LEDE这间转换，可能会出现两个ROM都在里面，引导可能只能进入官方的，这时可以刷下这个过度ROM，再通过WEB升级 
 https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/UBOOT/immortalwrt-24.10-snapshot-r32679-687c2906ac-mediatek-filogic-tplink_tl-xdr6086-initramfs-recovery.itb
-
+如果还不行，就换下三合一的UBOOT的，刷入后再换回来就可以。
+https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/UBOOT/Uboot-3ro1.7z
 以下为官方OPENWRT截图：
 
 ![image](https://github.com/user-attachments/assets/52995d5f-68d0-46e6-be6e-14b3a17b8361)
