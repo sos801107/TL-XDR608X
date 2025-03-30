@@ -11,14 +11,33 @@
 #
 
 name: Lede-XDR6086-6.6-mini-test
-
+#CI计划
 on:
-  repository_dispatch:
+  #自动编译：当Auto-Clean运行完成后
+  workflow_run:
+    workflows: ["Auto-Clean"]
+    types:
+      - completed
+  #手动编译
   workflow_dispatch:
+    inputs:
+      PACKAGE:
+        description: '手动调整插件包，多个请用\n符号隔开。'
+        required: false
+        type: string
+      TEST:
+        description: '仅输出配置文件，不编译固件。'
+        default: 'false'
+        required: false
+        type: boolean
+
+#on:
+#  repository_dispatch:
+ # workflow_dispatch:
 # 定时触发编译
-  schedule:
+#  schedule:
  ##   - cron: 36 21 * * 4
-    - cron: 0 16 * * *
+#    - cron: 0 16 * * *
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
