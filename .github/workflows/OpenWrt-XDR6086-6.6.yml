@@ -85,8 +85,8 @@ jobs:
         ## 强制默认r2s/r4s/r5s编译内核为6.6  
         sed -i "s/KERNEL_PATCHVER:=*.*/KERNEL_PATCHVER:=6.6/g" target/linux/mediatek/Makefile
         sed -i "s/KERNEL_PATCHVER=*.*/KERNEL_PATCHVER=6.6/g" target/linux/mediatek/Makefile        
-        sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='OpenWrt-TL-XDR6086-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
-        sed -i "s/OPENWRT_RELEASE='*.*'/OPENWRT_RELEASE='OpenWrt-TL-XDR6086-$(date +%Y%m%d)'/g"  package/base-files/files/usr/lib/os-release      
+        sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='TL-XDR6086-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
+        sed -i "s/OPENWRT_RELEASE='*.*'/OPENWRT_RELEASE='TL-XDR6086-$(date +%Y%m%d)'/g"  package/base-files/files/usr/lib/os-release      
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
