@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: Lede-XDR6086-6.6-mini-test
+name: OpenWRT-XDR6086-6.6
 
 on:
   repository_dispatch:
