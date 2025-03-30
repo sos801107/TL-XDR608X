@@ -17,7 +17,8 @@ https://github.com/coolsnowwolf/lede
 固件信息里的时间为编译开始的时间，方便核对上游源码提交时间。
 
 TP-XDR608X，配套的UBOOT：支持最新官方OPENWRT itb和BIN文件刷入
-https://raw.githubusercontent.com/sos801107/TP-Link-TL-XDR6086/refs/heads/main/UBOOT-mt7986-tplink_tl-xdr608x.zip
+
+https://github.com/sos801107/TL-XDR608X/tree/main/UBOOT
 
 以下为官方OPENWRT截图：
 
