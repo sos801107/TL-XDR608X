@@ -28,6 +28,7 @@ https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/UBOOT/imm
 
 进入UBOOT 后打开http://192.168.1.1/uboot.html 上传新的UBOOT就可以更换
 
+（这个不支持官方ITB刷入）
 https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/UBOOT/Uboot-3ro1.7z
 
 
