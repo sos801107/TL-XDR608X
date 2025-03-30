@@ -1,8 +1,9 @@
+
 #!/bin/bash
 #
 # https://github.com/P3TERX/Actions-OpenWrt
-# File name: diy-part2.sh
-# Description: OpenWrt DIY script part 2 (After Update feeds)
+# File name: diy-part1.sh
+# Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 # Copyright (c) 2019-2024 P3TERX <https://p3terx.com>
 #
@@ -10,72 +11,35 @@
 # See /LICENSE for more information.
 #
 
-# Modify default IP
-#sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate
+# Uncomment a feed source
+#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
-# Modify default theme
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+# Add a feed source
+#echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
+#echo 'src-git turboacc https://github.com/chenmozhijin/turboacc' >> feeds.conf.default
+#echo 'src-git theme https://github.com/zijieKwok/istoreos-theme' >> feeds.conf.default
+echo 'src-git theme https://github.com/sbwml/luci-theme-argon' >> feeds.conf.default
+echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
+echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
 
-# Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
-#补充汉化
-echo -e "\nmsgid \"NAS\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
-echo -e "msgstr \"存储\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+#mkdir -p files/etc/openclash/core
+#wget -qO- https://raw.githubusercontent.com/vernesong/OpenClash/refs/heads/core/dev/meta/clash-linux-arm64.tar.gz | tar xOvz > files/etc/openclash/core/clash_meta
+#chmod +x files/etc/openclash/core/clash_meta
+#wget -qO- https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat > files/etc/openclash/GeoIP.dat
+#wget -qO- https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat > files/etc/openclash/GeoSite.dat
 
-##清除默认密码password
-sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
+mkdir -p files/etc/config
+#wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/openclash > files/etc/config/openclash
+wget -qO- https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/main_router/openclash > files/etc/config/openclash
+wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/mosdns > files/etc/config/mosdns
+wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/smartdns > files/etc/config/smartdns
 
-# 移除要替换的包
-rm -rf feeds/small/{shadowsocksr-libev,shadowsocks-rust,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-wol,luci-app-bypass}
-rm -rf feeds/luci/applications/{shadowsocksr-libev,shadowsocks-rust,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-wol,luci-app-bypass}
-rm -rf feeds/luci/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir,shadowsocksr-libev-ssr-server}
-#rm -rf feeds/small/luci-app-ssr-plus
-#rm -rf feeds/small/luci-i18n-ssr-plus-zh-cn
-#rm -rf feeds/luci/applications/luci-app-ssr-plus
-#rm -rf feeds/luci/applications/luci-i18n-ssr-plus-zh-cn
-#rm -rf feeds/luci/applications/luci-app-wol
-#rm -rf feeds/luci/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir,shadowsocksr-libev-ssr-server}
-
-# 将packages源的相关文件替换成passwall_packages源的
-rm -rf feeds/packages/net/xray-core
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/packages/net/v2ray-geodata
-rm -rf feeds/packages/net/v2ray-geoip
-rm -rf feeds/packages/net/sing-box
-rm -rf feeds/packages/net/chinadns-ng
-rm -rf feeds/packages/net/dns2socks
-rm -rf feeds/packages/net/dns2tcp
-rm -rf feeds/packages/net/microsocks
-cp -r feeds/small/xray-core feeds/packages/net
-cp -r feeds/small/mosdns feeds/packages/net
-cp -r feeds/small/v2ray-geodata feeds/packages/net
-cp -r feeds/small/v2ray-geoip feeds/packages/net
-cp -r feeds/small/sing-box feeds/packages/net
-cp -r feeds/small/chinadns-ng feeds/packages/net
-cp -r feeds/small/dns2socks feeds/packages/net
-cp -r feeds/small/dns2tcp feeds/packages/net
-cp -r feeds/small/microsocks feeds/packages/net
-
-
-
-##更新FQ
-rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-openclash}
-cp -r feeds/small/luci-app-passwall feeds/luci/applications/luci-app-passwall
-cp -r feeds/small/luci-app-openclash feeds/luci/applications/luci-app-openclash
-
-#rm -rf feeds/luci/applications/luci-app-turboacc
-#cp -r feeds/turboacc/luci-app-turboacc feeds/luci/applications/luci-app-turboacc
-
-# istoreos-theme
-rm -rf feeds/luci/themes/luci-theme-argon
-cp -r feeds/theme/luci-theme-argon feeds/luci/themes/luci-theme-argon
-
-#cp -r feeds/kenzo/luci-theme-argon feeds/luci/themes/luci-theme-argon
-
-
-
-#rm -rf feeds/luci/applications/luci-app-passwall/*
-#cp -af feeds/small/luci-app-passwall/*  feeds/luci/applications/luci-app-passwall/
-
-#rm -rf feeds/luci/applications/luci-app-openclash/*
-#cp -af feeds/small/luci-app-openclash/*  feeds/luci/applications/luci-app-openclash/
+mkdir -p files/etc
+wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/opkg.conf > files/etc/opkg.conf
+mkdir -p files/etc/opkg
+wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/distfeeds.conf > files/etc/opkg/distfeeds.conf
+mkdir -p files/root
+wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/.profile > files/root/.profile
+#luci openwrt-24.10
+#sed -i 's/coolsnowwolf\/luci/immortalwrt\/luci/g' ./feeds.conf.default
+#sed -i 's/openwrt-23.05/openwrt-24.10/g' ./feeds.conf.default
