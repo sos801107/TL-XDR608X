@@ -1,4 +1,3 @@
-
 #
 # https://github.com/P3TERX/Actions-OpenWrt
 #
@@ -11,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt-XDR6088-6.6
+name: OpenWRT-XDR6088-6.6
 
 on:
   repository_dispatch:
@@ -24,9 +23,9 @@ env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: xdr6088-openwrt.config
-  DIY_P1_SH: diy-part1-mini.sh
-  DIY_P2_SH: diy-part2.sh
+  CONFIG_FILE: config/xdr6088-openwrt.config
+  DIY_P1_SH: diy/diy-part1.sh
+  DIY_P2_SH: diy/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -68,12 +67,24 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
-    - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+   # - name: Update feeds
+   #   run: cd openwrt && ./scripts/feeds update -a
 
-    - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
+   # - name: Install feeds
+  #    run: cd openwrt && ./scripts/feeds install -a
+      
+    - name: Update & Install feeds
+      working-directory: ./openwrt
+      run: |
+        ./scripts/feeds update -a
 
+        ./scripts/feeds install -a
+        
+        ## 强制默认r2s/r4s/r5s编译内核为6.6  
+        sed -i "s/KERNEL_PATCHVER:=*.*/KERNEL_PATCHVER:=6.6/g" target/linux/mediatek/Makefile
+        sed -i "s/KERNEL_PATCHVER=*.*/KERNEL_PATCHVER=6.6/g" target/linux/mediatek/Makefile        
+        sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='OpenWrt-TL-XDR6088-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
+        sed -i "s/OPENWRT_RELEASE='*.*'/OPENWRT_RELEASE='OpenWrt-TL-XDR6088-$(date +%Y%m%d)'/g"  package/base-files/files/usr/lib/os-release      
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
@@ -106,59 +117,55 @@ jobs:
       if: (!cancelled())
       run: df -hT
 
-    - name: Upload bin directory
-      uses: actions/upload-artifact@main
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
-      with:
-        name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: openwrt/bin
-
-    - name: Organize files
-      id: organize
-      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
+    - name: Assemble Artifact
+      id: assemble_artifact
       run: |
-        cd openwrt/bin/targets/*/*
-        rm -rf packages
-        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-        echo "status=success" >> $GITHUB_OUTPUT
+        rm -rf ./ARM_Out
+        mkdir -p ./ARM_Out/
+        cp -a ./openwrt/.config ./ARM_Out/xdr6088.config
+        
+        getmd5()
+        {
+        md5sum=`md5sum $1`
+        md5=`echo ${md5sum% *}`
+        md5=`echo ${md5:0:10}`
+        }
+        
+        rom=openwrt/bin/targets/mediatek/filogic/openwrt-mediatek-filogic-tplink_tl-xdr6088-squashfs-sysupgrade.itb
 
-    - name: Upload firmware directory
+        getmd5 $rom        
+        cp -a $rom ./ARM_Out/OpenWRT-TP-Link_TL-XDR6088-6.6-$(date +"%Y.%m.%d-%H%M").itb             
+    - name: Upload Firmwares
       uses: actions/upload-artifact@main
-      if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: ${{ env.FIRMWARE }}
+        name: xdr6088-OpenWrt_66
+        path: ARM_Out/*.bin
 
-    - name: Generate release tag
-      id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+    - name: Upload config
+      uses: actions/upload-artifact@main
+      with:
+        name: xdr6088-config
+        path: ARM_Out/xdr6088.config
+ 
+    - name: Upload Packages
+      uses: actions/upload-artifact@main
+      with:
+        name: xdr6088-Packages
+        path: openwrt/bin/packages 
+        
+    - name: Generate Tag & Release Name
+      id: generate_name
       run: |
-        echo "release_tag=OpenWrt-XDR6088-6.6-$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
-        touch release.txt
-        [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
-        echo "status=success" >> $GITHUB_OUTPUT
+        time=$(date +%Y%m%d%H%M%S)
+        release_tag="$time"
+        release_name="OpenWRT-TL-XDR6088-6.6内核-$(date +%Y%m%d)"
+        echo "release_name=$release_name" >> $GITHUB_OUTPUT
+        echo "release_tag=$release_tag" >> $GITHUB_OUTPUT       
 
-    - name: Upload firmware to release
-      uses: softprops/action-gh-release@master
-      if: steps.tag.outputs.status == 'success' && !cancelled()
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create Release & Upload
+      uses: ncipollo/release-action@v1.14.0
       with:
-        tag_name: ${{ steps.tag.outputs.release_tag }}
-        body_path: release.txt
-        files: ${{ env.FIRMWARE }}/*
-
-    - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@main
-      with:
-        retain_days: 0
-        keep_minimum_runs: 2
-
-    - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@master
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        keep_latest: 30
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: ARM_Out/*.itb
+        name: ${{ steps.generate_name.outputs.release_name }}
+        tag: ${{ steps.generate_name.outputs.release_tag }}
+        token: ${{ secrets.GITHUB_TOKEN }}
