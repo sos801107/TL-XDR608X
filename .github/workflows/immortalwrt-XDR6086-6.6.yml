@@ -26,8 +26,8 @@ env:
   REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/xdr6086-immortalwrt.config
-  DIY_P1_SH: diy/diy-part1.sh
-  DIY_P2_SH: diy/diy-part2.sh
+  DIY_P1_SH: diy/diy-part1-im.sh
+  DIY_P2_SH: diy/diy-part2-im.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
