@@ -141,7 +141,7 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         name: xdr6086-OpenWrt_66
-        path: ARM_Out/*.bin
+        path: ARM_Out/*.itb
 
     - name: Upload config
       uses: actions/upload-artifact@main
