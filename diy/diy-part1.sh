@@ -16,9 +16,9 @@
 
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
-echo 'src-git turboacc https://github.com/chenmozhijin/turboacc.git;luci' >> feeds.conf.default
-echo 'src-git turboaccpackage https://github.com/chenmozhijin/turboacc.git;package' >> feeds.conf.default
-
+#echo 'src-git turboacc https://github.com/chenmozhijin/turboacc.git;luci' >> feeds.conf.default
+#echo 'src-git turboaccpackage https://github.com/chenmozhijin/turboacc.git;package' >> feeds.conf.default
+git_sparse_clone main https://github.com/kiddin9/kwrt-packages kwrt-packages luci-app-turboacc
 #echo 'src-git theme https://github.com/zijieKwok/istoreos-theme' >> feeds.conf.default
 echo 'src-git theme https://github.com/sbwml/luci-theme-argon' >> feeds.conf.default
 echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
