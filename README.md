@@ -10,7 +10,6 @@ https://github.com/coolsnowwolf/lede
 
 # 固件简要说明：
 后台IP:192.168.1.1
-官方OPENWET刷入后无线是关闭的，要自己手动开下，国家代码	也要选择下5G才正常。
 
 固件每天2点自动编译。
 
