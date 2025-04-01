@@ -22,6 +22,17 @@
 echo -e "\nmsgid \"NAS\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "msgstr \"存储\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 
+# Git稀疏克隆，只克隆指定目录到本地
+function git_sparse_clone() {
+  branch="$1" repourl="$2" && shift 2
+  git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
+  repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
+  cd $repodir && git sparse-checkout set $@
+  mv -f $@ ../package
+  cd .. && rm -rf $repodir
+}
+git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-turboacc
+
 ##清除默认密码password
 #sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 #修改WIFI名称
