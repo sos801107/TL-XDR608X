@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWRT-XDR6086-6.6
+name: immortalwrt-XDR6086-6.6
 
 #CI计划
 on:
