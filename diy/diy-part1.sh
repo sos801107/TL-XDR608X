@@ -42,6 +42,8 @@ mkdir -p files/etc/opkg
 wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/distfeeds.conf > files/etc/opkg/distfeeds.conf
 mkdir -p files/root
 wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/.profile > files/root/.profile
+mkdir -p files/lib/wifi
+wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/mac80211.uc > files/lib/wifi/mac80211.uc
 #luci openwrt-24.10
 #sed -i 's/coolsnowwolf\/luci/immortalwrt\/luci/g' ./feeds.conf.default
 #sed -i 's/openwrt-23.05/openwrt-24.10/g' ./feeds.conf.default
