@@ -32,7 +32,7 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-turboacc
-git_sparse_clone package https://github.com/chenmozhijin/turboacc turboacc
+#git_sparse_clone package https://github.com/chenmozhijin/turboacc turboacc
 
 
 ##清除默认密码password
