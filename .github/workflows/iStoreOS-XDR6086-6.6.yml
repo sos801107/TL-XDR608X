@@ -20,7 +20,7 @@ env:
   REPO_URL: https://github.com/istoreos/istoreos
   REPO_BRANCH: istoreos-24.10
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/xdr6088-openwrt.config
+  CONFIG_FILE: config/xdr6086-openwrt.config
   DIY_P1_SH: diy/diy-part1-im.sh
   DIY_P2_SH: diy/diy-part2-im.sh
   UPLOAD_BIN_DIR: false
