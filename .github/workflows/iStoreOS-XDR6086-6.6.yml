@@ -18,7 +18,7 @@ on:
 
 env:
   REPO_URL: https://github.com/istoreos/istoreos
-  REPO_BRANCH: openwrt-24.10
+  REPO_BRANCH: istoreos-24.10
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: xdr6086-mini.config
   DIY_P1_SH: diy-part1-mini.sh
