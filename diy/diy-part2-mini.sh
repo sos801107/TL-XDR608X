@@ -25,7 +25,18 @@ sed -i "/timezone='.*'/a\\\t\t\set system.@system[-1].zonename='Asia/Shanghai'" 
 #补充汉化
 echo -e "\nmsgid \"NAS\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "msgstr \"存储\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+# 更改菜单名字
+echo -e "\nmsgid \"HomeProxy\"" >> feeds/luci/applications/luci-app-homeproxy/po/zh_Hans/homeproxy.po
+echo -e "msgstr \"科学代理\"" >> feeds/luci/applications/luci-app-homeproxy/po/zh_Hans/homeproxy.po
 
+echo -e "\nmsgid \"UPnP\"" >> feeds/luci/applications/luci-app-upnp/po/zh_Hans/upnp.po
+echo -e "msgstr \"即插即用\"" >> feeds/luci/applications/luci-app-upnp/po/zh_Hans/upnp.po
+
+echo -e "\nmsgid \"Turbo ACC 网络加速\"" >> feeds/turboacc/luci-app-turboacc/po/zh_Hans/tailscale.po
+echo -e "msgstr \"网络加速\"" >> feeds/turboacc/luci-app-turboacc/po/zh_Hans/tailscale.po
+
+echo -e "\nmsgid \"Argon 主题设置\"" >> feeds/luci/applications/luci-app-argon-config/po/zh_Hans/tailscale.po
+echo -e "msgstr \"主题设置\"" >> feeds/luci/applications/luci-app-argon-config/po/zh_Hans/tailscale.po
 ##清除默认密码password
 sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
 
