@@ -18,6 +18,7 @@
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
 echo 'src-git turboacc https://github.com/chenmozhijin/turboacc.git;luci' >> feeds.conf.default
 echo 'src-git turboaccpackage https://github.com/chenmozhijin/turboacc.git;package' >> feeds.conf.default
+echo 'src-git vlmcsd https://github.com/AutoCONFIG/luci-app-vlmcsd;master' >> feeds.conf.default
 
 #echo 'src-git theme https://github.com/zijieKwok/istoreos-theme' >> feeds.conf.default
 echo 'src-git theme https://github.com/sbwml/luci-theme-argon' >> feeds.conf.default
