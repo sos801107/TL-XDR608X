@@ -7,6 +7,8 @@ https://github.com/openwrt/openwrt
 LEDE-24.10源码：
 https://github.com/coolsnowwolf/lede
 
+Immortalwrt-24.10源码：
+https://github.com/immortalwrt/immortalwrt
 
 # 固件简要说明：
 后台IP:192.168.1.1
