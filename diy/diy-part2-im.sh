@@ -65,6 +65,33 @@ cp -r feeds/small/dns2tcp feeds/packages/net
 cp -r feeds/small/microsocks feeds/packages/net
 
 
+# 更改菜单名字
+echo -e "\nmsgid \"MosDNS\"" >> package/luci-app-mosdns/luci-app-mosdns/po/zh_Hans/mosdns.po
+echo -e "msgstr \"转发分流\"" >> package/luci-app-mosdns/luci-app-mosdns/po/zh_Hans/mosdns.po
+
+#echo -e "\nmsgid \"Lucky\"" >> package/luci-app-lucky/luci-app-lucky/po/zh_Hans/lucky.po
+#echo -e "msgstr \"大吉大利\"" >> package/luci-app-lucky/luci-app-lucky/po/zh_Hans/lucky.po
+
+#echo -e "\nmsgid \"AList\"" >> package/luci-app-alist/luci-app-alist/po/zh_Hans/alist.po
+#echo -e "msgstr \"聚合网盘\"" >> package/luci-app-alist/luci-app-alist/po/zh_Hans/alist.po
+
+#echo -e "\nmsgid \"Tailscale\"" >> package/luci-app-tailscale/po/zh_Hans/tailscale.po
+#echo -e "msgstr \"虚拟组网\"" >> package/luci-app-tailscale/po/zh_Hans/tailscale.po
+
+#echo -e "\nmsgid \"Nikki\"" >> package/OpenWrt-nikki/luci-app-nikki/po/zh_Hans/nikki.po
+#echo -e "msgstr \"科学上网\"" >> package/OpenWrt-nikki/luci-app-nikki/po/zh_Hans/nikki.po
+
+echo -e "\nmsgid \"HomeProxy\"" >> package/homeproxy/po/zh_Hans/homeproxy.po
+echo -e "msgstr \"科学代理\"" >> package/homeproxy/po/zh_Hans/homeproxy.po
+
+echo -e "\nmsgid \"UPnP\"" >> package/mtk/applications/luci-app-upnp-mtk-adjust/po/zh_Hans/upnp.po
+echo -e "msgstr \"即插即用\"" >> package/mtk/applications/luci-app-upnp-mtk-adjust/po/zh_Hans/upnp.po
+
+echo -e "\nmsgid \"Turbo ACC 网络加速\"" >> package/luci-app-turboacc/po/zh_Hans/tailscale.po
+echo -e "msgstr \"网络加速\"" >> package/luci-app-turboacc/po/zh_Hans/tailscale.po
+
+echo -e "\nmsgid \"Argon 主题设置\"" >> package/luci-app-argon-config/po/zh_Hans/tailscale.po
+echo -e "msgstr \"主题设置\"" >> package/luci-app-argon-config/po/zh_Hans/tailscale.po
 
 ##更新FQ
 rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-openclash}
