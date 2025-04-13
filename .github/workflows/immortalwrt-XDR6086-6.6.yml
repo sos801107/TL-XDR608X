@@ -60,7 +60,9 @@ jobs:
         sudo -E apt-get clean
         git config --global user.name 'GitHub Actions' && git config --global user.email 'noreply@github.com'
         df -h
-    
+        sudo mkdir -p /workdir
+        sudo chown $USER:$GROUPS /workdir
+        
     - name: Clone source code
       working-directory: /workdir
       run: |
