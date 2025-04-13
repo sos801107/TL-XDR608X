@@ -18,7 +18,7 @@
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
 echo 'src-git turboacc https://github.com/chenmozhijin/turboacc.git;luci' >> feeds.conf.default
 echo 'src-git turboaccpackage https://github.com/chenmozhijin/turboacc.git;package' >> feeds.conf.default
-echo 'src-git nftables https://github.com/fullcone-nat-nftables/nft-fullcone' >> feeds.conf.default
+#echo 'src-git nftables https://github.com/fullcone-nat-nftables/nft-fullcone' >> feeds.conf.default
 
 echo 'src-git vlmcsd https://github.com/AutoCONFIG/luci-app-vlmcsd;master' >> feeds.conf.default
 
