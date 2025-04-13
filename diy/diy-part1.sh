@@ -16,15 +16,20 @@
 
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
-echo 'src-git vlmcsd https://github.com/AutoCONFIG/luci-app-vlmcsd;master' >> feeds.conf.default
 echo 'src-git turboacc https://github.com/chenmozhijin/turboacc.git;luci' >> feeds.conf.default
 echo 'src-git turboaccpackage https://github.com/chenmozhijin/turboacc.git;package' >> feeds.conf.default
-echo 'src-git nftables https://github.com/fullcone-nat-nftables/nft-fullcone' >> feeds.conf.default
+#echo 'src-git nftables https://github.com/fullcone-nat-nftables/nft-fullcone' >> feeds.conf.default
+
+echo 'src-git appvlmcsd https://github.com/AutoCONFIG/luci-app-vlmcsd;master' >> feeds.conf.default
 
 #echo 'src-git theme https://github.com/zijieKwok/istoreos-theme' >> feeds.conf.default
 echo 'src-git theme https://github.com/sbwml/luci-theme-argon' >> feeds.conf.default
 echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
 echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
+#echo 'src-git kenzo https://github.com/xuanranran/openwrt-package' >> feeds.conf.default
+
+#echo 'src-git kiddin9 https://github.com/kiddin9/kwrt-packages' >> feeds.conf.default
+
 
 #mkdir -p files/etc/openclash/core
 #wget -qO- https://raw.githubusercontent.com/vernesong/OpenClash/refs/heads/core/dev/meta/clash-linux-arm64.tar.gz | tar xOvz > files/etc/openclash/core/clash_meta
