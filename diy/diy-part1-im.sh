@@ -20,7 +20,7 @@ echo 'src-git turboacc https://github.com/chenmozhijin/turboacc.git;luci' >> fee
 echo 'src-git turboaccpackage https://github.com/chenmozhijin/turboacc.git;package' >> feeds.conf.default
 #echo 'src-git nftables https://github.com/fullcone-nat-nftables/nft-fullcone' >> feeds.conf.default
 
-#echo 'src-git vlmcsd https://github.com/AutoCONFIG/luci-app-vlmcsd;master' >> feeds.conf.default
+echo 'src-git appvlmcsd https://github.com/AutoCONFIG/luci-app-vlmcsd;master' >> feeds.conf.default
 
 #echo 'src-git theme https://github.com/zijieKwok/istoreos-theme' >> feeds.conf.default
 echo 'src-git theme https://github.com/sbwml/luci-theme-argon' >> feeds.conf.default
