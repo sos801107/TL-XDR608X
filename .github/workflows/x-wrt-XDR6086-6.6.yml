@@ -141,10 +141,10 @@ jobs:
         md5=`echo ${md5:0:10}`
         }
         
-        rom=openwrt/bin/targets/mediatek/filogic/immortalwrt-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.itb
+        rom=openwrt/bin/targets/mediatek/filogic/x-wrt-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.itb
 
         getmd5 $rom        
-        cp -a $rom ./ARM_Out/immortalwrt-TP-Link_TL-XDR6086-6.6-$(date +"%Y.%m.%d-%H%M").itb             
+        cp -a $rom ./ARM_Out/x-wrt-TP-Link_TL-XDR6086-6.6-$(date +"%Y.%m.%d-%H%M").itb             
     - name: Upload Firmwares
       uses: actions/upload-artifact@main
       with:
@@ -168,7 +168,7 @@ jobs:
       run: |
         time=$(date +%Y%m%d%H%M%S)
         release_tag="$time"
-        release_name="immortalwrt-TL-XDR6086-6.6内核-$(date +%Y%m%d)"
+        release_name="x-wrt-TL-XDR6086-6.6内核-$(date +%Y%m%d)"
         echo "release_name=$release_name" >> $GITHUB_OUTPUT
         echo "release_tag=$release_tag" >> $GITHUB_OUTPUT       
 
