@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: iStoreOS-XDR6086-6.6
+name: iStoreOS-X86-6.6
 
 on:
   repository_dispatch:
@@ -21,8 +21,8 @@ env:
   REPO_BRANCH: istoreos-24.10
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/iStoreOS-x86.config
-  DIY_P1_SH: diy/diy-part1-im.sh
-  DIY_P2_SH: diy/diy-part2-im.sh
+  DIY_P1_SH: diy/diy-part1-x86.sh
+  DIY_P2_SH: diy/diy-part2-x86.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -137,7 +137,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=iStoreOS-XDR6086-6.6-$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+        echo "release_tag=iStoreOS-X86-6.6-$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
         touch release.txt
         [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
