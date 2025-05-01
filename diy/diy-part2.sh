@@ -16,10 +16,6 @@
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
-#修改默认时区
-sed -i "s/timezone='.*'/timezone='CST-8'/g" ./package/base-files/files/bin/config_generate
-sed -i "/timezone='.*'/a\\\t\t\set system.@system[-1].zonename='Asia/Shanghai'" ./package/base-files/files/bin/config_generate
-
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 #补充汉化
@@ -38,19 +34,6 @@ echo -e "msgstr \"网络加速\"" >> feeds/turboacc/luci-app-turboacc/po/zh-cn/t
 echo -e "\nmsgid \"Argon 主题设置\"" >> feeds/luci/applications/luci-app-argon-config/po/zh_Hans/tailscale.po
 echo -e "msgstr \"主题设置\"" >> feeds/luci/applications/luci-app-argon-config/po/zh_Hans/tailscale.po
 
-# Git稀疏克隆，只克隆指定目录到本地
-function git_sparse_clone() {
-  branch="$1" repourl="$2" && shift 2
-  git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
-  repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
-  cd $repodir && git sparse-checkout set $@
-  mv -f $@ ../package
-  cd .. && rm -rf $repodir
-}
-#git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-turboacc
-#git_sparse_clone package https://github.com/chenmozhijin/turboacc turboacc
-
-
 ##清除默认密码password
 #sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 #修改WIFI名称
@@ -64,8 +47,8 @@ function git_sparse_clone() {
 
 # 移除要替换的包
 rm -rf feeds/small/{shadowsocksr-libev,shadowsocks-rust,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-wol,luci-app-bypass}
-rm -rf feeds/luci/applications/{shadowsocksr-libev,shadowsocks-rust,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-wol,luci-app-bypass}
-rm -rf feeds/luci/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir,shadowsocksr-libev-ssr-server}
+rm -rf feeds/luci/applications/{shadowsocksr-libev,shadowsocks-rust,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-wol,luci-app-bypass,luci-app-argon-config,luci-theme-argon}
+rm -rf feeds/luci/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir,shadowsocksr-libev-ssr-server,luci-app-argon-config,luci-theme-argon}
 #rm -rf feeds/small/luci-app-ssr-plus
 #rm -rf feeds/small/luci-i18n-ssr-plus-zh-cn
 #rm -rf feeds/luci/applications/luci-app-ssr-plus
@@ -93,7 +76,7 @@ cp -r feeds/small/dns2socks feeds/packages/net
 cp -r feeds/small/dns2tcp feeds/packages/net
 cp -r feeds/small/microsocks feeds/packages/net
 
-
+#rm -rf package/feeds/packages/gnutls
 
 ##更新FQ
 rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-openclash}
@@ -106,6 +89,10 @@ cp -r feeds/small/luci-app-openclash feeds/luci/applications/luci-app-openclash
 # istoreos-theme
 rm -rf feeds/luci/themes/luci-theme-argon
 cp -r feeds/theme/luci-theme-argon feeds/luci/themes/luci-theme-argon
+
+rm -rf feeds/luci/applications/luci-app-argon-config
+cp -r feeds/theme/luci-app-argon-config feeds/luci/applications/luci-app-argon-config
+
 
 #cp -r feeds/kenzo/luci-theme-argon feeds/luci/themes/luci-theme-argon
 
