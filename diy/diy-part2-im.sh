@@ -47,8 +47,8 @@ echo -e "msgstr \"主题设置\"" >> feeds/luci/applications/luci-app-argon-conf
 
 # 移除要替换的包
 rm -rf feeds/small/{shadowsocksr-libev,shadowsocks-rust,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-wol,luci-app-bypass}
-rm -rf feeds/luci/applications/{shadowsocksr-libev,shadowsocks-rust,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-wol,luci-app-bypass}
-rm -rf feeds/luci/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir,shadowsocksr-libev-ssr-server}
+rm -rf feeds/luci/applications/{shadowsocksr-libev,shadowsocks-rust,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-wol,luci-app-bypass,luci-app-argon-config,luci-theme-argon}
+rm -rf feeds/luci/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir,shadowsocksr-libev-ssr-server,luci-app-argon-config,luci-theme-argon}
 #rm -rf feeds/small/luci-app-ssr-plus
 #rm -rf feeds/small/luci-i18n-ssr-plus-zh-cn
 #rm -rf feeds/luci/applications/luci-app-ssr-plus
@@ -89,6 +89,10 @@ cp -r feeds/small/luci-app-openclash feeds/luci/applications/luci-app-openclash
 # istoreos-theme
 rm -rf feeds/luci/themes/luci-theme-argon
 cp -r feeds/theme/luci-theme-argon feeds/luci/themes/luci-theme-argon
+
+rm -rf feeds/luci/applications/luci-app-argon-config
+cp -r feeds/theme/luci-app-argon-config feeds/luci/applications/luci-app-argon-config
+
 
 #cp -r feeds/kenzo/luci-theme-argon feeds/luci/themes/luci-theme-argon
 
