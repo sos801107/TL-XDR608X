@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: immortalwrt-X86-6.6
+name: ImmortalWrt-X86-6.6
 
 
 #CI计划
@@ -25,7 +25,7 @@ on:
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: openwrt-24.10
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/iStoreOS-x86.config
   DIY_P1_SH: diy/diy-part1-x86.sh
@@ -144,7 +144,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=immortalwrt-X86-6.6-$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+        echo "release_tag=ImmortalWrt-X86-6.6-$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
         touch release.txt
         [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
