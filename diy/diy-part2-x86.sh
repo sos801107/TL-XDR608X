@@ -76,8 +76,6 @@ cp -r feeds/small/dns2socks feeds/packages/net
 cp -r feeds/small/dns2tcp feeds/packages/net
 cp -r feeds/small/microsocks feeds/packages/net
 
-rm -rf feeds/packages/net/xray-core
-#rm -rf package/feeds/packages/gnutls
 
 ##更新FQ
 rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-openclash}
