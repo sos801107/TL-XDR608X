@@ -76,6 +76,7 @@ cp -r feeds/kiddin9/dns2socks feeds/packages/net
 cp -r feeds/kiddin9/dns2tcp feeds/packages/net
 cp -r feeds/kiddin9/microsocks feeds/packages/net
 
+rm -r package/feeds/packages/xray-core
 
 ##更新FQ
 rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-openclash}
