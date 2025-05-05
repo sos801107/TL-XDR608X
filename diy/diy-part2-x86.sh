@@ -76,6 +76,10 @@ cp -r feeds/small/dns2socks feeds/packages/net
 cp -r feeds/small/dns2tcp feeds/packages/net
 cp -r feeds/small/microsocks feeds/packages/net
 
+rm -rf feeds/third/luci-app-argon-config
+rm -rf feeds/third/luci-theme-argon
+
+
 #rm -rf package/feeds/packages/gnutls
 
 ##更新FQ
