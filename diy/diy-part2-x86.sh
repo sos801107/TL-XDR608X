@@ -56,6 +56,9 @@ rm -rf feeds/luci/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-
 #rm -rf feeds/luci/applications/luci-app-wol
 #rm -rf feeds/luci/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir,shadowsocksr-libev-ssr-server}
 
+rm -rf feeds/third/luci-app-argon-config
+rm -rf feeds/third/luci-theme-argon
+
 # 将packages源的相关文件替换成passwall_packages源的
 rm -rf feeds/packages/net/xray-core
 rm -rf feeds/packages/net/mosdns
@@ -76,8 +79,7 @@ cp -r feeds/small/dns2socks feeds/packages/net
 cp -r feeds/small/dns2tcp feeds/packages/net
 cp -r feeds/small/microsocks feeds/packages/net
 
-rm -rf feeds/third/luci-app-argon-config
-rm -rf feeds/third/luci-theme-argon
+
 
 
 #rm -rf package/feeds/packages/gnutls
