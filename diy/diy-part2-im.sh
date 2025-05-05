@@ -96,7 +96,9 @@ cp -r feeds/theme/luci-app-argon-config feeds/luci/applications/luci-app-argon-c
 
 #cp -r feeds/kenzo/luci-theme-argon feeds/luci/themes/luci-theme-argon
 
-
+## golang 为 1.24.x
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
 
 #rm -rf feeds/luci/applications/luci-app-passwall/*
 #cp -af feeds/small/luci-app-passwall/*  feeds/luci/applications/luci-app-passwall/
