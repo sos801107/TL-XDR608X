@@ -24,11 +24,11 @@ echo 'src-git appvlmcsd https://github.com/AutoCONFIG/luci-app-vlmcsd;master' >>
 
 #echo 'src-git theme https://github.com/zijieKwok/istoreos-theme' >> feeds.conf.default
 echo 'src-git theme https://github.com/sbwml/luci-theme-argon' >> feeds.conf.default
-#echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
-#echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
+echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
+echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
 #echo 'src-git kenzo https://github.com/xuanranran/openwrt-package' >> feeds.conf.default
 
-echo 'src-git kiddin9 https://github.com/kiddin9/kwrt-packages' >> feeds.conf.default
+#echo 'src-git kiddin9 https://github.com/kiddin9/kwrt-packages' >> feeds.conf.default
 
 #mkdir -p files/etc/openclash/core
 #wget -qO- https://raw.githubusercontent.com/vernesong/OpenClash/refs/heads/core/dev/meta/clash-linux-amd64.tar.gz | tar xOvz > files/etc/openclash/core/clash_meta
@@ -44,8 +44,8 @@ wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main
 
 mkdir -p files/etc
 wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/opkg.conf > files/etc/opkg.conf
-mkdir -p files/etc/opkg
-wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/x86/distfeeds.conf > files/etc/opkg/distfeeds.conf
+#mkdir -p files/etc/opkg
+#wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/x86/distfeeds.conf > files/etc/opkg/distfeeds.conf
 mkdir -p files/root
 wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/.profile > files/root/.profile
 #mkdir -p files/lib/wifi
