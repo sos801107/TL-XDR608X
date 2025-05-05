@@ -58,6 +58,7 @@ rm -rf feeds/luci/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-
 
 rm -rf feeds/third/luci-app-argon-config
 rm -rf feeds/third/luci-theme-argon
+rm -rf package/feeds/packages/xray-core
 
 # 将packages源的相关文件替换成passwall_packages源的
 rm -rf feeds/packages/net/xray-core
