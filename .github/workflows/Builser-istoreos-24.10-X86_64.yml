@@ -9,6 +9,7 @@ env:
   REPO_URL: https://github.com/istoreos/istoreos.git
   REPO_BRANCH: istoreos-24.10
   CONFIG_FILE: config/iStoreOS-x86.config
+  DIY_P1_SH: diy/diy-part1-x86.sh  
   DIY_SCRIPT: diy/diy-part2-x86.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
@@ -101,6 +102,10 @@ jobs:
     - name: 安装feeds
       run: |
         cd $OPENWRT_PATH
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        chmod +x $DIY_P1_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P1_SH
         sed -i "1isrc-git diskman https://github.com/jjm2473/luci-app-diskman.git;dev\n" feeds.conf.default
         sed -i "2isrc-git third_party https://github.com/linkease/istore-packages.git;main\n" feeds.conf.default
         sed -i "3isrc-git oaf https://github.com/jjm2473/OpenAppFilter.git;dev4\n" feeds.conf.default
