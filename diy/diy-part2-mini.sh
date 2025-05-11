@@ -100,6 +100,11 @@ cp -r feeds/theme/luci-app-argon-config feeds/luci/applications/luci-app-argon-c
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
 
+# 必要的补丁
+pushd feeds/luci
+   curl -s https://raw.githubusercontent.com/oppen321/path/refs/heads/main/Firewall/0001-luci-mod-status-firewall-disable-legacy-firewall-rul.patch | patch -p1
+popd
+
 #rm -rf feeds/luci/applications/luci-app-passwall/*
 #cp -af feeds/small/luci-app-passwall/*  feeds/luci/applications/luci-app-passwall/
 
