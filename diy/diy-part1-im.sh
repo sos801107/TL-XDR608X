@@ -54,6 +54,4 @@ wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main
 #sed -i 's/coolsnowwolf\/luci/immortalwrt\/luci/g' ./feeds.conf.default
 #sed -i 's/openwrt-23.05/openwrt-24.10/g' ./feeds.conf.default
 
-pushd
-   curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
-popd
+
