@@ -112,3 +112,6 @@ popd
 
 #rm -rf feeds/luci/applications/luci-app-openclash/*
 #cp -af feeds/small/luci-app-openclash/*  feeds/luci/applications/luci-app-openclash/
+
+./scripts/feeds update -a
+./scripts/feeds install -a
