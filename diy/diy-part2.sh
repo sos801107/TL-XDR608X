@@ -52,6 +52,7 @@ echo -e "msgstr \"主题设置\"" >> feeds/luci/applications/luci-app-argon-conf
 rm -rf feeds/small/{shadowsocksr-libev,shadowsocks-rust,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-wol,luci-app-bypass}
 rm -rf feeds/luci/applications/{shadowsocksr-libev,shadowsocks-rust,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-ssr-plus,luci-i18n-ssr-plus-zh-cn,luci-app-wol,luci-app-bypass,luci-app-argon-config,luci-theme-argon}
 rm -rf feeds/luci/packages/net/{shadowsocksr-libev-ssr-check,shadowsocksr-libev-ssr-local,shadowsocksr-libev-ssr-redir,shadowsocksr-libev-ssr-server,luci-app-argon-config,luci-theme-argon}
+rm -rf feeds/kenzo/{luci-theme-argon,luci-app-argon-config,luci-app-passwall}
 
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
@@ -75,6 +76,8 @@ cp -r feeds/small/chinadns-ng feeds/packages/net
 cp -r feeds/small/dns2socks feeds/packages/net
 cp -r feeds/small/dns2tcp feeds/packages/net
 cp -r feeds/small/microsocks feeds/packages/net
+
+
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
