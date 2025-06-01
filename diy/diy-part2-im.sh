@@ -142,9 +142,9 @@ pushd feeds/luci
    curl -s https://raw.githubusercontent.com/oppen321/path/refs/heads/main/Firewall/0001-luci-mod-status-firewall-disable-legacy-firewall-rul.patch | patch -p1
 popd
 
-pushd
-   curl -sSL https://raw.githubusercontent.com/Jaykwok2999/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh 
-popd
+#pushd
+#   curl -sSL https://raw.githubusercontent.com/Jaykwok2999/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh 
+#popd
 
 
 #rm -rf feeds/luci/applications/luci-app-passwall/*
@@ -153,5 +153,4 @@ popd
 #rm -rf feeds/luci/applications/luci-app-openclash/*
 #cp -af feeds/small/luci-app-openclash/*  feeds/luci/applications/luci-app-openclash/
 
-./scripts/feeds update -a
-./scripts/feeds install -a
+
