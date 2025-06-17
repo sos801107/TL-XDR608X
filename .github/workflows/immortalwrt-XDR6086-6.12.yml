@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: Immortalwrt-XDR6086-6.6
+name: Immortalwrt-XDR6086-6.12
 
 #CI计划
 on:
