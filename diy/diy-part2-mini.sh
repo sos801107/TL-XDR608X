@@ -75,7 +75,7 @@ cp -r feeds/small/chinadns-ng feeds/packages/net
 cp -r feeds/small/dns2socks feeds/packages/net
 cp -r feeds/small/dns2tcp feeds/packages/net
 cp -r feeds/small/microsocks feeds/packages/net
-
+rm -rf feeds/packages/rust
 rm -rf package/feeds/packages/rust
 #rm -rf package/feeds/packages/gnutls
 
@@ -98,8 +98,8 @@ cp -r feeds/theme/luci-app-argon-config feeds/luci/applications/luci-app-argon-c
 #cp -r feeds/kenzo/luci-theme-argon feeds/luci/themes/luci-theme-argon
 
 ## golang 为 1.24.x
-#rm -rf feeds/packages/lang/golang
-#git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
 
 # 必要的补丁
 pushd feeds/luci
