@@ -76,6 +76,7 @@ cp -r feeds/small/dns2socks feeds/packages/net
 cp -r feeds/small/dns2tcp feeds/packages/net
 cp -r feeds/small/microsocks feeds/packages/net
 
+rm -rf package/feeds/packages/rust
 #rm -rf package/feeds/packages/gnutls
 
 ##更新FQ
