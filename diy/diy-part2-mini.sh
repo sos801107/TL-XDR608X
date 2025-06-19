@@ -97,9 +97,9 @@ cp -r feeds/theme/luci-app-argon-config feeds/luci/applications/luci-app-argon-c
 
 #cp -r feeds/kenzo/luci-theme-argon feeds/luci/themes/luci-theme-argon
 
-## golang 为 1.24.x
+## golang 为 1.25.x
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
 
 # 必要的补丁
 pushd feeds/luci
