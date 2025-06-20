@@ -1,4 +1,4 @@
-name: Builser-Lede-X86_64
+name: Builser-Lede-XDR6086-6.12
 
 #CI计划
 on:
@@ -14,7 +14,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
   CONFIG_FILE: config/xdr6086-mini.config
-  DIY_SCRIPT: diy/diy-part2-mini.sh
+  DIY_SCRIPT: diy/diy-lede.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
@@ -117,8 +117,8 @@ jobs:
         ./scripts/feeds install -a
         
         ## 强制默认编译内核   
-        sed -i "s/KERNEL_PATCHVER:=*.*/KERNEL_PATCHVER:=6.6/g" target/linux/mediatek/Makefile
-        sed -i "s/KERNEL_PATCHVER=*.*/KERNEL_PATCHVER=6.6/g" target/linux/mediatek/Makefile            
+        sed -i "s/KERNEL_PATCHVER:=*.*/KERNEL_PATCHVER:=6.12/g" target/linux/mediatek/Makefile
+        sed -i "s/KERNEL_PATCHVER=*.*/KERNEL_PATCHVER=6.12/g" target/linux/mediatek/Makefile            
         
     - name: Load Custom Configuration
       run: |
