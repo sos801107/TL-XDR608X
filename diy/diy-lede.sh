@@ -163,48 +163,26 @@ git_sparse_clone openwrt-24.10 https://github.com/sbwml/luci-theme-argon luci-ap
 git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
 git_sparse_clone luci https://github.com/chenmozhijin/turboacc luci-app-turboacc
 
-git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-mosdns
-git_sparse_clone main https://github.com/kiddin9/kwrt-packages mosdns
-git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-tailscale
-git_sparse_clone main https://github.com/kiddin9/kwrt-packages tailscale
+#git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-mosdns
+#git_sparse_clone main https://github.com/kiddin9/kwrt-packages mosdns
+#git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-tailscale
+#git_sparse_clone main https://github.com/kiddin9/kwrt-packages tailscale
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-upnp
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages miniupnpd
 
-rm -rf feeds/small/ luci-app-OpenClash
+rm -rf feeds/small/luci-app-OpenClash
 rm -rf feeds/istoreos_ipk/patch/wall-luci/luci-app-OpenClash
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-OpenClash
+
+
 # golong1.24.2依赖
 rm -rf feeds/packages/lang/golang
-# git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-# git clone https://git.kejizero.online/zhao/packages_lang_golang -b 23.x feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
-
-
-# 锐捷认证
-# git clone https://github.com/sbwml/luci-app-mentohust package/mentohust
-
-# Adguardhome
-# git_sparse_clone master https://github.com/kenzok8/openwrt-packages adguardhome luci-app-adguardhome
-
-# default-settings
-# git clone --depth=1 -b dev https://github.com/Jaykwok2999/default-settings package/default-settings
 
 # UPnP
 rm -rf feeds/{packages/net/miniupnpd,luci/applications/luci-app-upnp}
 git clone https://git.kejizero.online/zhao/miniupnpd feeds/packages/net/miniupnpd -b v2.3.7
 git clone https://git.kejizero.online/zhao/luci-app-upnp feeds/luci/applications/luci-app-upnp -b master
-
-# Lucky
-# git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
-
-# unzip
-rm -rf feeds/packages/utils/unzip
-git clone https://github.com/sbwml/feeds_packages_utils_unzip feeds/packages/utils/unzip
-
-# frpc名称
-sed -i 's,发送,Transmission,g' feeds/luci/applications/luci-app-transmission/po/zh_Hans/transmission.po
-sed -i 's,frp 服务器,frps 服务器,g' feeds/luci/applications/luci-app-frps/po/zh_Hans/frps.po
-sed -i 's,frp 客户端,frpc 客户端,g' feeds/luci/applications/luci-app-frpc/po/zh_Hans/frpc.po
 
 # 必要的补丁
 pushd feeds/luci
@@ -214,25 +192,7 @@ popd
 pushd
    curl -sSL https://raw.githubusercontent.com/Jaykwok2999/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 popd
-# NTP
-sed -i 's/0.openwrt.pool.ntp.org/ntp1.aliyun.com/g' package/base-files/files/bin/config_generate
-sed -i 's/1.openwrt.pool.ntp.org/ntp2.aliyun.com/g' package/base-files/files/bin/config_generate
-sed -i 's/2.openwrt.pool.ntp.org/time1.cloud.tencent.com/g' package/base-files/files/bin/config_generate
-sed -i 's/3.openwrt.pool.ntp.org/time2.cloud.tencent.com/g' package/base-files/files/bin/config_generate
 
-# 更改 banner
-#rm -rf package/base-files/files/etc/banner
-#cp -af feeds/istoreos_ipk/patch/diy/banner package/base-files/files/etc/
-
-# tailscale
-rm -rf feeds/packages/net/tailscale
-# rm -rf feeds/istoreos_ipk/tailscale/tailscale
-# cp -af feeds/istoreos_ipk/tailscale/tailscale  feeds/packages/net/
-sed -i '/\/etc\/init\.d\/tailscale/d;/\/etc\/config\/tailscale/d;' feeds/packages/net/tailscale/Makefile
-
-# 增加驱动补丁
-# cp -af feeds/istoreos_ipk/patch/diy/patches-6.6/993-bnx2x_warpcore_8727_2_5g_sgmii_txfault.patch target/linux/x86/patches-6.6/
-#cp -af feeds/istoreos_ipk/patch/diy/patches-6.6/996-intel-igc-i225-i226-disable-eee.patch target/linux/x86/patches-6.6/
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
