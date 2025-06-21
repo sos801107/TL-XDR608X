@@ -171,7 +171,7 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         name: xdr6086-OpenWrt_66
-        path: ARM_Out/*.bin
+        path: ARM_Out/*.itb
 
     - name: Upload config
       uses: actions/upload-artifact@main
@@ -197,7 +197,7 @@ jobs:
     - name: Create Release & Upload
       uses: ncipollo/release-action@v1.14.0
       with:
-        artifacts: ARM_Out/*.bin
+        artifacts: ARM_Out/*.itb
         name: ${{ steps.generate_name.outputs.release_name }}
         tag: ${{ steps.generate_name.outputs.release_tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
