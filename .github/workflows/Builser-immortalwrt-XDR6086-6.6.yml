@@ -14,8 +14,7 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
   REPO_BRANCH: openwrt-24.10
   CONFIG_FILE: config/xdr6086-immortalwrt.config
-  #DIY_SCRIPT: diy/diy-part2-mini.sh
-  DIY_SCRIPT: diy/diy-immortalwrt.sh.sh
+  DIY_SCRIPT: diy/diy-immortalwrt.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
