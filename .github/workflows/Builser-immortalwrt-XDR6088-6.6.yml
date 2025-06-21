@@ -166,12 +166,12 @@ jobs:
         
         rom=openwrt/bin/targets/mediatek/filogic/immortalwrt-mediatek-filogic-tplink_tl-xdr6088-squashfs-sysupgrade.itb
         getmd5 $rom        
-        cp -a $rom ./ARM_Out/immortalwrt-TP-Link_TL-XDR6088-6.6-$(date +"%Y.%m.%d-%H%M").bin             
+        cp -a $rom ./ARM_Out/immortalwrt-TP-Link_TL-XDR6088-6.6-$(date +"%Y.%m.%d-%H%M").itb             
     - name: Upload Firmwares
       uses: actions/upload-artifact@main
       with:
         name: xdr6088-OpenWrt_66
-        path: ARM_Out/*.bin
+        path: ARM_Out/*.itb
 
     - name: Upload config
       uses: actions/upload-artifact@main
@@ -197,7 +197,7 @@ jobs:
     - name: Create Release & Upload
       uses: ncipollo/release-action@v1.14.0
       with:
-        artifacts: ARM_Out/*.bin
+        artifacts: ARM_Out/*.itb
         name: ${{ steps.generate_name.outputs.release_name }}
         tag: ${{ steps.generate_name.outputs.release_tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
