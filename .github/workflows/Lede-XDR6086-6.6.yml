@@ -14,7 +14,8 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
   CONFIG_FILE: config/xdr6086-mini.config
-  DIY_SCRIPT: diy/diy-part2-mini.sh
+  #DIY_SCRIPT: diy/diy-part2-mini.sh
+  DIY_SCRIPT: diy/diy-lede.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
