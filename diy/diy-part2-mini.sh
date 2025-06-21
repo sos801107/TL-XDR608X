@@ -66,19 +66,20 @@ rm -rf feeds/packages/net/chinadns-ng
 rm -rf feeds/packages/net/dns2socks
 rm -rf feeds/packages/net/dns2tcp
 rm -rf feeds/packages/net/microsocks
-cp -r feeds/small/xray-core feeds/packages/net
-cp -r feeds/small/mosdns feeds/packages/net
-cp -r feeds/small/v2ray-geodata feeds/packages/net
-cp -r feeds/small/v2ray-geoip feeds/packages/net
-cp -r feeds/small/sing-box feeds/packages/net
-cp -r feeds/small/chinadns-ng feeds/packages/net
-cp -r feeds/small/dns2socks feeds/packages/net
-cp -r feeds/small/dns2tcp feeds/packages/net
-cp -r feeds/small/microsocks feeds/packages/net
+##cp -r feeds/small/xray-core feeds/packages/net
+#cp -r feeds/small/mosdns feeds/packages/net
+#cp -r feeds/small/v2ray-geodata feeds/packages/net
+#cp -r feeds/small/v2ray-geoip feeds/packages/net
+#cp -r feeds/small/sing-box feeds/packages/net
+#cp -r feeds/small/chinadns-ng feeds/packages/net
+#cp -r feeds/small/dns2socks feeds/packages/net
+#cp -r feeds/small/dns2tcp feeds/packages/net
+#cp -r feeds/small/microsocks feeds/packages/net
 #rm -rf feeds/packages/rust
 #rm -rf package/feeds/packages/rust
 #rm -rf package/feeds/packages/gnutls
 
+rm -rf feeds/small/luci-app-ssr-plus
 ##更新FQ
 rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-openclash}
 cp -r feeds/small/luci-app-passwall feeds/luci/applications/luci-app-passwall
@@ -105,14 +106,14 @@ git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/l
 pushd feeds/luci
    curl -s https://raw.githubusercontent.com/oppen321/path/refs/heads/main/Firewall/0001-luci-mod-status-firewall-disable-legacy-firewall-rul.patch | patch -p1
 popd
-pushd
-   curl -sSL https://raw.githubusercontent.com/Jaykwok2999/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
-popd
+#pushd
+#   curl -sSL https://raw.githubusercontent.com/Jaykwok2999/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+#popd
 #rm -rf feeds/luci/applications/luci-app-passwall/*
 #cp -af feeds/small/luci-app-passwall/*  feeds/luci/applications/luci-app-passwall/
 
 #rm -rf feeds/luci/applications/luci-app-openclash/*
 #cp -af feeds/small/luci-app-openclash/*  feeds/luci/applications/luci-app-openclash/
 
-./scripts/feeds update -a
-./scripts/feeds install -a
+#./scripts/feeds update -a
+#./scripts/feeds install -a
