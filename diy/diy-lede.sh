@@ -109,6 +109,8 @@ cp -r feeds/small/ipt2socks feeds/packages/net
 cp -r feeds/small/microsocks feeds/packages/net
 cp -r feeds/small/geoview feeds/packages/net
 
+rm -rf feeds/istoreos_ipk/patch/istoreos-files
+
 rm -rf feeds/small/luci-app-passwall
 rm -rf feeds/kenzo/{luci-app-argon-config,luci-theme-argon}
 rm -rf feeds/luci/applications/{luci-app-tailscale,luci-app-turboacc}
