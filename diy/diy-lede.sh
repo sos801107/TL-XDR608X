@@ -1,7 +1,7 @@
 #!/bin/bash
 #luci openwrt-24.10
 #sed -i 's/coolsnowwolf\/luci/immortalwrt\/luci/g' ./feeds.conf.default
-sed -i 's/openwrt-23.05/master/g' ./feeds.conf.default
+sed -i 's/openwrt-23.05/openwrt-24.10/g' ./feeds.conf.default
 
 mkdir -p files/etc/config
 wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/openclash > files/etc/config/openclash
