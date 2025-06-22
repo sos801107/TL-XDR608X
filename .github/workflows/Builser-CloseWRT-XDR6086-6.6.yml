@@ -13,7 +13,7 @@ on:
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10.git
   REPO_BRANCH: openwrt-24.10-6.6
-  CONFIG_FILE: config/xdr6086-immortalwrt.config
+  CONFIG_FILE: config/mt7986-ax6000.config
   DIY_SCRIPT: diy/diy-immortalwrt.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
