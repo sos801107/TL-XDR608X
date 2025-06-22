@@ -1,4 +1,4 @@
-name: Builser-immortalwrt-XDR6086-6.6
+name: Builser-ImmortalWrt-XDR6086-6.6
 
 #CI计划
 on:
@@ -19,7 +19,7 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: immortalwrt_XDR6086
+  FIRMWARE_TAG: ImmortalWrt_XDR6086
   TZ: Asia/Shanghai
 
 jobs:
