@@ -9,14 +9,14 @@ mkdir -p files/etc
 wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/opkg.conf > files/etc/opkg.conf
 mkdir -p files/etc/opkg
 wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/distfeeds.conf > files/etc/opkg/distfeeds.conf-86
-#wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/distfeeds.conf > files/etc/opkg/distfeeds.conf
+wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/distfeeds.conf > files/etc/opkg/distfeeds.conf
 
 mkdir -p files/root
 wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/.profile > files/root/.profile
 #修改默认IP地址
 sed -i "s/192\.168\.[0-9]*\.[0-9]*/192.168.1.1/g" ./package/base-files/files/bin/config_generate
 #修改默认主机名
-sed -i "s/hostname='.*'/hostname='OpenWrt'/g" ./package/base-files/files/bin/config_generate
+sed -i "s/hostname='.*'/hostname='immortalwrt'/g" ./package/base-files/files/bin/config_generate
 #修改默认时区
 sed -i "s/timezone='.*'/timezone='CST-8'/g" ./package/base-files/files/bin/config_generate
 sed -i "/timezone='.*'/a\\\t\t\set system.@system[-1].zonename='Asia/Shanghai'" ./package/base-files/files/bin/config_generate
@@ -60,7 +60,7 @@ sed -i 's/services/nas/g' feeds/istoreos_ipk/op-fileBrowser/luci-app-filebrowser
 sed -i 's/msgstr "Socat"/msgstr "端口转发"/g' feeds/third_party/luci-app-socat/po/zh-cn/socat.po
 
 ##加入作者信息
-sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='LEDE-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
+sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='OpenWrt-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
 sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By sos07'/g" package/base-files/files/etc/openwrt_release
 
 # 移除要替换的包
@@ -108,6 +108,9 @@ cp -r feeds/small/dns2socks feeds/packages/net
 cp -r feeds/small/ipt2socks feeds/packages/net
 cp -r feeds/small/microsocks feeds/packages/net
 cp -r feeds/small/geoview feeds/packages/net
+
+rm -rf feeds/istoreos_ipk/patch/istoreos-files
+git clone https://github.com/sos801107/istoreos-files -b main feeds/packages/istoreos-files
 
 rm -rf feeds/small/luci-app-passwall
 rm -rf feeds/kenzo/{luci-app-argon-config,luci-theme-argon}
@@ -176,7 +179,7 @@ git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-OpenClash
 
 # golong1.24.2依赖
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
 
 # UPnP
 rm -rf feeds/{packages/net/miniupnpd,luci/applications/luci-app-upnp}
