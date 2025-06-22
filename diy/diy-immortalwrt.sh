@@ -179,7 +179,7 @@ git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-OpenClash
 
 # golong1.24.2依赖
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
 
 # UPnP
 rm -rf feeds/{packages/net/miniupnpd,luci/applications/luci-app-upnp}
