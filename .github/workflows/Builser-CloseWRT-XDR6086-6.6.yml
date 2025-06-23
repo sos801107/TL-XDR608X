@@ -14,7 +14,7 @@ env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10.git
   REPO_BRANCH: openwrt-24.10-6.6
   CONFIG_FILE: config/mt7986-ax6000.config
-  #DIY_SCRIPT: diy/diy-immortalwrt.sh
+  DIY_SCRIPT: diy/diy-immortalwrt.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
@@ -128,8 +128,8 @@ jobs:
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
         #chmod +x $GITHUB_WORKSPACE/scripts/*.sh
-        chmod +x $DIY_SCRIPT
-        cd $OPENWRT_PATH
+        #chmod +x $DIY_SCRIPT
+        #cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
         #$GITHUB_WORKSPACE/scripts/preset-clash-core.sh $CLASH_KERNEL
 
