@@ -180,7 +180,7 @@ rm -rf feeds/small/luci-app-openclash
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
 rm -rf feeds/small/luci-app-homeproxy
-git clone https://github.com/immortalwrt/homeproxy -b dev feeds/packages/luci-app-homeproxy
+git_sparse_clone dev https://github.com/immortalwrt/homeproxy luci-app-homeproxy
 
 rm -rf feeds/small/sing-box
 git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages sing-box
