@@ -183,7 +183,7 @@ rm -rf feeds/small/luci-app-homeproxy
 git clone https://github.com/immortalwrt/homeproxy -b dev feeds/packages/luci-app-homeproxy
 
 rm -rf feeds/small/sing-box
-git clone https://github.com/SagerNet/sing-box -b dev-next feeds/packages/sing-box
+git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages sing-box
 
 
 # golong1.24.2依赖
