@@ -171,7 +171,6 @@ git_sparse_clone luci https://github.com/chenmozhijin/turboacc luci-app-turboacc
 #git_sparse_clone main https://github.com/kiddin9/kwrt-packages tailscale
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-upnp
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages miniupnpd
-
 rm -rf feeds/small/luci-app-openclash
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
@@ -179,7 +178,7 @@ rm -rf feeds/small/luci-app-homeproxy
 git clone https://github.com/immortalwrt/homeproxy -b dev feeds/packages/luci-app-homeproxy
 
 rm -rf feeds/small/sing-box
-git clone https://github.com/SagerNet/sing-box -b dev-next feeds/packages/sing-box
+git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages sing-box
 
 
 # golong1.24.2依赖
