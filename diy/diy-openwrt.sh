@@ -179,12 +179,6 @@ git_sparse_clone main https://github.com/kiddin9/kwrt-packages miniupnpd
 rm -rf feeds/small/luci-app-openclash
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
-rm -rf feeds/small/luci-app-homeproxy
-git_sparse_clone dev https://github.com/immortalwrt/homeproxy luci-app-homeproxy
-
-rm -rf feeds/small/sing-box
-git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages sing-box
-
 # golong1.24.2依赖
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
