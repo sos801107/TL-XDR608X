@@ -111,7 +111,6 @@ cp -r feeds/small/ipt2socks feeds/packages/net
 cp -r feeds/small/microsocks feeds/packages/net
 cp -r feeds/small/geoview feeds/packages/net
 
-rm -rf tools/erofs-utils
 
 rm -rf feeds/istoreos_ipk/patch/istoreos-files
 git clone https://github.com/sos801107/istoreos-files -b main feeds/packages/istoreos-files
