@@ -231,7 +231,7 @@ jobs:
             const buildDate = Math.floor(new Date(workflowStartTime).getTime() / 1000);
 
             const json = {
-              "x86_64": [
+              "mediatek": [
                 {
                   "build_date": String(buildDate),
                   "sha256sum": sha256,
