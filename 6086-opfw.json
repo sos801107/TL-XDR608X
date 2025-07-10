@@ -1,8 +1,8 @@
 {
     "mediatek": [
         {
-            "build_date": "1752157823",
-            "sha256sum": "29a658a086f6a61106a31d62707ec0c1cbb087f15c5173ee2205bf1be8b495c7",
+            "build_date": "1752163867",
+            "sha256sum": "d337fb71c394a298c1c5b40c880e12418aa3aa39a9b238b6bf96c291dce1a1f1",
             "url": "https://github.com/sos801107/TL-XDR608X/releases/download/OpenWrt-XDR6086-6.6-ota/openwrt-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.itb"
         }
     ]
