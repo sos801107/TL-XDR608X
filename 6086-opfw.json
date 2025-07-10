@@ -1,9 +1,9 @@
 {
-    "mediatek": [
+    "x86_64": [
         {
-            "build_date": "1752078233",
-            "sha256sum": "c8d12c832a8035652cade13cbb6504a30233037c1105fb696c7988bd19231c1e",
-            "url": "https://github.com/sos801107/iStoreOS/releases/download/OpenWrt/openwrt-x86-64-generic-squashfs-combined-efi.img.gz"
+            "build_date": "1752135609",
+            "sha256sum": "8e13ffa8425738d25692491639fd57d46d12b7b09ca7105b7f396fae0fc80b1c",
+            "url": "https://github.com/sos801107/TL-XDR608X/releases/download/OpenWrt-XDR6086-6.6-ota/openwrt-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.itb"
         }
     ]
 }
