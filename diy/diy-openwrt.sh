@@ -64,7 +64,7 @@ sed -i 's/services/nas/g' feeds/istoreos_ipk/op-fileBrowser/luci-app-filebrowser
 sed -i 's/msgstr "Socat"/msgstr "端口转发"/g' feeds/third_party/luci-app-socat/po/zh-cn/socat.po
 
 ##加入作者信息
-sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='OpenWrt-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
+#sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='OpenWrt-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
 sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By sos07'/g" package/base-files/files/etc/openwrt_release
 
 # 移除要替换的包
@@ -162,7 +162,9 @@ function merge_package() {
     done
     cd "$rootdir"
 }
-
+rm -rf package/diy/luci-app-ota
+git_sparse_clone 6086op https://github.com/sos801107/istoreos-ota luci-app-ota
+git_sparse_clone 6086op https://github.com/sos801107/istoreos-ota fw_download_tool
 
 git_sparse_clone openwrt-24.10 https://github.com/sbwml/luci-theme-argon luci-theme-argon
 git_sparse_clone openwrt-24.10 https://github.com/sbwml/luci-theme-argon luci-app-argon-config
@@ -182,6 +184,12 @@ git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 # golong1.24.2依赖
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
+
+# 更改时间戳
+rm -rf scripts/get_source_date_epoch.sh
+mkdir -p scripts
+wget -qO- https://raw.githubusercontent.com/Jaykwok2999/istoreos-ipk/refs/heads/main/patch/get_source_date_epoch.sh > scripts/get_source_date_epoch.sh
+chmod +x scripts/get_source_date_epoch.sh
 
 # 必要的补丁
 pushd feeds/luci
