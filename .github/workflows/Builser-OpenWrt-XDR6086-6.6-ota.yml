@@ -20,8 +20,6 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: OpenWrt-XDR6086-6.6
-  FIRMWARE_VERSION: $(date +%Y%m%d)
   TZ: Asia/Shanghai
 
 jobs:
@@ -72,8 +70,7 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
         echo "DATE=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
-        echo ${{ env.FIRMWARE_VERSION }} > version
-        #echo $(date +"%Y%m%d%H") > version
+        echo $(date +"%Y%m%d") > version
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
 
     - name: 生成变量
@@ -176,7 +173,7 @@ jobs:
       with:
         name: OpenWrt-24.10.2-XDR6086 for ${{ env.DATE }}
         allowUpdates: true
-        tag: ${{ env.FIRMWARE_TAG }}
+        tag: OpenWrt-XDR6086-6.6
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/OpenWrt-TP-Link_*.itb
         body: |
