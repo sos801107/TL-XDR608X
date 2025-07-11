@@ -21,7 +21,6 @@ env:
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
   FIRMWARE_TAG: $(date +%Y%m%d%H%M)
-  
   TZ: Asia/Shanghai
 
 jobs:
