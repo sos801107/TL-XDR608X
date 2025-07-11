@@ -20,7 +20,8 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: $(date +%Y%m%d%H%M)
+  FIRMWARE_TAG: OpenWrt-XDR6086-6.6
+  FIRMWARE_VERSION: $(date +%Y%m%d)
   TZ: Asia/Shanghai
 
 jobs:
@@ -71,7 +72,7 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
         echo "DATE=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
-        echo ${{ env.FIRMWARE_TAG }} > version
+        echo ${{ env.FIRMWARE_VERSION }} > version
         #echo $(date +"%Y%m%d%H") > version
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
 
@@ -153,7 +154,7 @@ jobs:
       if: steps.compile.outputs.status == 'success'
       run: |
         cd $OPENWRT_PATH/bin/targets/*/*
-        mv openwrt-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.itb OpenWrt-TP-Link_TL-XDR6086-6.6-${{ env.FIRMWARE_TAG }}.itb
+        mv openwrt-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.itb OpenWrt-TP-Link_TL-XDR6086-6.6-$(date +"%Y.%m.%d-%H%M").itb
         cat sha256sums
         cp $OPENWRT_PATH/.config build.config
         mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
