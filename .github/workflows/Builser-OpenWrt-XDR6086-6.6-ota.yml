@@ -151,7 +151,7 @@ jobs:
       if: steps.compile.outputs.status == 'success'
       run: |
         cd $OPENWRT_PATH/bin/targets/*/*
-        mv openwrt/bin/targets/mediatek/filogic/openwrt-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.itb OpenWrt-TP-Link_TL-XDR6086-6.6-$(date +"%Y.%m.%d-%H%M").itb
+        mv openwrt-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.itb OpenWrt-TP-Link_TL-XDR6086-6.6-$(date +"%Y.%m.%d-%H%M").itb
         cat sha256sums
         cp $OPENWRT_PATH/.config build.config
         mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
