@@ -1,4 +1,4 @@
-name: Builser-OpenWrt-XDR6088-6.6-ota
+name: Builser-OpenWrt-XDR6088-6.6
 
 #CI计划
 on:
