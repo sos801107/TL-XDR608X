@@ -171,7 +171,7 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
       uses: ncipollo/release-action@v1
       with:
-        name: ImmortalWrt-24.10.2-XDR6086 for ${{ env.DATE }}
+        name: ImmortalWrt-24.10-XDR6086 for ${{ env.DATE }}
         allowUpdates: true
         tag: ImmortalWrt-XDR6086-6.6
         token: ${{ secrets.GITHUB_TOKEN }}
