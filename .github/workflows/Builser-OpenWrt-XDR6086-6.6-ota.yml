@@ -20,6 +20,7 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
+  FIRMWARE_TAG: $(date +"%Y%m%d%H")
   TZ: Asia/Shanghai
 
 jobs:
@@ -70,7 +71,7 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
         echo "DATE=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
-        echo $(date +"%Y%m%d") > version
+        echo ${{ env.FIRMWARE_TAG }} > version
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
 
     - name: 生成变量
@@ -151,7 +152,7 @@ jobs:
       if: steps.compile.outputs.status == 'success'
       run: |
         cd $OPENWRT_PATH/bin/targets/*/*
-        mv openwrt-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.itb OpenWrt-TP-Link_TL-XDR6086-6.6-$(date +"%Y.%m.%d-%H%M").itb
+        mv openwrt-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.itb OpenWrt-TP-Link_TL-XDR6086-6.6-${{ env.FIRMWARE_TAG }}.itb
         cat sha256sums
         cp $OPENWRT_PATH/.config build.config
         mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
@@ -171,9 +172,9 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
       uses: ncipollo/release-action@v1
       with:
-        name: OpenWrt-24.10-XDR6086 for ${{ env.DATE }}
+        name: OpenWrt-24.10-XDR6086 for ${{ env.FIRMWARE_TAG }}
         allowUpdates: true
-        tag: OpenWrt-XDR6086-6.6
+        tag: OpenWrt-XDR6086-${{ env.FIRMWARE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/OpenWrt-TP-Link_*.itb
         body: |
