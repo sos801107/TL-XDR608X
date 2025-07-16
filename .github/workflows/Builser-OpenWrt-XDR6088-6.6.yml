@@ -172,7 +172,7 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
       uses: ncipollo/release-action@v1
       with:
-        name: OpenWrt-24.10-XDR6088 for ${{ env.FIRMWARE_TAG }}
+        name: OpenWrt-24.10-XDR6088 for ${{ env.DATE }}
         allowUpdates: true
         tag: OpenWrt-XDR6088-${{ env.FIRMWARE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
