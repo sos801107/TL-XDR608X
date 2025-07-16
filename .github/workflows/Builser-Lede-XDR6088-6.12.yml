@@ -176,7 +176,7 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
       uses: ncipollo/release-action@v1
       with:
-        name: LEDE-24.10.2-XDR6088 for ${{ env.FIRMWARE_TAG }}
+        name: LEDE-24.10.2-XDR6088 for ${{ env.DATE }}
         allowUpdates: true
         tag: Lede_XDR6088-${{ env.FIRMWARE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
