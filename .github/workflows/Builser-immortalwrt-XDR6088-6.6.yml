@@ -12,7 +12,8 @@ on:
 
 
 env:
-  REPO_URL: https://github.com/dailook/immortalwrt-24.10.git
+  REPO_URL: https://github.com/immortalwrt/immortalwrt.git
+  #REPO_URL: https://github.com/dailook/immortalwrt-24.10.git  
   REPO_BRANCH: openwrt-24.10
   CONFIG_FILE: config/xdr6088-immortalwrt.config
   DIY_SCRIPT: diy/diy-immortalwrt.sh
@@ -93,7 +94,7 @@ jobs:
         echo "DEVICE_TARGET=$DEVICE_TARGET" >> $GITHUB_ENV
         DEVICE_SUBTARGET=$(cat .config | grep CONFIG_TARGET_SUBTARGET | awk -F '"' '{print $2}')
         echo "DEVICE_SUBTARGET=$DEVICE_SUBTARGET" >> $GITHUB_ENV
-        echo "FIRMWARE_TAG=$(date +"%Y%m%d")" >> $GITHUB_ENV
+        #echo "FIRMWARE_TAG=$(date +"%Y%m%d")" >> $GITHUB_ENV
 
     - name: 缓存工具链
       if: env.CACHE_TOOLCHAIN == 'true'
@@ -182,7 +183,7 @@ jobs:
       with:
         name: ImmortalWrt-24.10-XDR6088 for ${{ env.DATE }}
         allowUpdates: true
-        tag: ImmortalWrt-XDR6088-${{ env.FIRMWARE_TAG }}
+        tag: ImmortalWrt-XDR6088-$(date +"%Y%m%d")
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/ImmortalWrt-TP-Link_*.itb
         body: |
