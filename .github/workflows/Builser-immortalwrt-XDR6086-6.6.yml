@@ -12,7 +12,8 @@ on:
 
 
 env:
-  REPO_URL: https://github.com/dailook/immortalwrt-24.10.git
+  REPO_URL: https://github.com/immortalwrt/immortalwr.git
+  #REPO_URL: https://github.com/dailook/immortalwrt-24.10.git
   REPO_BRANCH: openwrt-24.10
   CONFIG_FILE: config/xdr6086-immortalwrt.config
   DIY_SCRIPT: diy/diy-immortalwrt.sh
