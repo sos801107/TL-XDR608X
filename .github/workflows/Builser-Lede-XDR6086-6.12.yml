@@ -24,6 +24,7 @@ env:
 
 jobs:
   Build:
+    name: Build Lede-XDR6086-6.12
     runs-on: ubuntu-22.04
 
     steps:
