@@ -14,7 +14,7 @@ on:
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
   REPO_BRANCH: openwrt-24.10
-  CONFIG_FILE: configs/onecloud-immortalwrt.config
+  CONFIG_FILE: config/onecloud-immortalwrt.config
   DIY_SCRIPT: diy/diy-immortalwrt-OneCloud.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
