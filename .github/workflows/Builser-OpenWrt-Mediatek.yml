@@ -151,9 +151,35 @@ jobs:
       run: |
         cd $OPENWRT_PATH/bin/targets/*/*
         
-        #mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz openwrt-24.10.2-$(date +"%Y%m%d%H")-x86-64-squashfs-combined-efi.img.gz
-        #mv openwrt-x86-64-generic-squashfs-combined.img.gz openwrt-24.10.2-$(date +"%Y%m%d%H")-x86-64-squashfs-combined.img.gz
-
+        mv openwrt-mediatek-filogic-abt_asr3000-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-abt_asr3000-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-cetron_ct3003-squashfs-sysupgrade.bin openwrt-24.10.2-$(date +"%Y%m%d%H")-cetron_ct3003-squashfs-sysupgrade.bin
+        mv openwrt-mediatek-filogic-cmcc_a10-stock-squashfs-sysupgrade.bin openwrt-24.10.2-$(date +"%Y%m%d%H")-cmcc_a10-stock-squashfs-sysupgrade.bin
+        mv openwrt-mediatek-filogic-cmcc_a10-ubootmod-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-cmcc_a10-ubootmod-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-cmcc_rax3000m-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-cmcc_rax3000m-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-cudy_tr3000-v1-squashfs-sysupgrade.bin openwrt-24.10.2-$(date +"%Y%m%d%H")-cudy_tr3000-v1-squashfs-sysupgrade.bin
+        mv openwrt-mediatek-filogic-cudy_tr3000-v1-ubootmod-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-cudy_tr3000-v1-ubootmod-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-glinet_gl-mt3000-squashfs-sysupgrade.bin openwrt-24.10.2-$(date +"%Y%m%d%H")-glinet_gl-mt3000-squashfs-sysupgrade.bin
+        mv openwrt-mediatek-filogic-glinet_gl-mt6000-squashfs-sysupgrade.bin openwrt-24.10.2-$(date +"%Y%m%d%H")-glinet_gl-mt6000-squashfs-sysupgrade.bin
+        mv openwrt-mediatek-filogic-glinet_gl-x3000-squashfs-sysupgrade.bin openwrt-24.10.2-$(date +"%Y%m%d%H")-glinet_gl-x3000-squashfs-sysupgrade.bin
+        mv openwrt-mediatek-filogic-glinet_gl-xe3000-squashfs-sysupgrade.bin openwrt-24.10.2-$(date +"%Y%m%d%H")-glinet_gl-xe3000-squashfs-sysupgrade.bin
+        mv openwrt-mediatek-filogic-h3c_magic-nx30-pro-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-h3c_magic-nx30-pro-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-jcg_q30-pro-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-jcg_q30-pro-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-jdcloud_re-cp-03-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-jdcloud_re-cp-03-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-netcore_n60-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-netcore_n60-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-nokia_ea0326gmp-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-nokia_ea0326gmp-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-qihoo_360t7-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-qihoo_360t7-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-ruijie_rg-x60-pro-squashfs-sysupgrade.bin openwrt-24.10.2-$(date +"%Y%m%d%H")-ruijie_rg-x60-pro-squashfs-sysupgrade.bin
+        mv openwrt-mediatek-filogic-tplink_tl-xdr4288-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-tplink_tl-xdr4288-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-tplink_tl-xdr6086-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-tplink_tl-xdr6086-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-tplink_tl-xdr6088-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-tplink_tl-xdr6088-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-tplink_tl-xtr8488-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-tplink_tl-xtr8488-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-xiaomi_mi-router-ax3000t-squashfs-sysupgrade.bin openwrt-24.10.2-$(date +"%Y%m%d%H")-xiaomi_mi-router-ax3000t-squashfs-sysupgrade.bin
+        mv openwrt-mediatek-filogic-xiaomi_mi-router-ax3000t-ubootmod-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-xiaomi_mi-router-ax3000t-ubootmod-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-xiaomi_mi-router-wr30u-stock-squashfs-sysupgrade.bin openwrt-24.10.2-$(date +"%Y%m%d%H")-xiaomi_mi-router-wr30u-stock-squashfs-sysupgrade.bin
+        mv openwrt-mediatek-filogic-xiaomi_mi-router-wr30u-ubootmod-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-xiaomi_mi-router-wr30u-ubootmod-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-xiaomi_redmi-router-ax6000-stock-squashfs-sysupgrade.bin openwrt-24.10.2-$(date +"%Y%m%d%H")-xiaomi_redmi-router-ax6000-stock-squashfs-sysupgrade.bin
+        mv openwrt-mediatek-filogic-xiaomi_redmi-router-ax6000-ubootmod-squashfs-sysupgrade.itb openwrt-24.10.2-$(date +"%Y%m%d%H")-xiaomi_redmi-router-ax6000-ubootmod-squashfs-sysupgrade.itb
+        mv openwrt-mediatek-filogic-zyxel_ex5700-telenor-squashfs-sysupgrade.bin openwrt-24.10.2-$(date +"%Y%m%d%H")-zyxel_ex5700-telenor-squashfs-sysupgrade.bin
         cat sha256sums
         cp $OPENWRT_PATH/.config build.config
         mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
