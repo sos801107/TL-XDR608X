@@ -98,7 +98,7 @@ rm -rf feeds/packages/net/chinadns-ng
 rm -rf feeds/packages/net/dns2socks
 rm -rf feeds/packages/net/dns2tcp
 rm -rf feeds/packages/net/microsocks
-rm -rf feeds/small/xray-core
+cp -r feeds/small/xray-core feeds/packages/net
 cp -r feeds/small/mosdns feeds/packages/net
 cp -r feeds/small/v2ray-geodata feeds/packages/net
 cp -r feeds/small/v2ray-geoip feeds/packages/net
