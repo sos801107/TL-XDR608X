@@ -180,6 +180,9 @@ git_sparse_clone main https://github.com/kiddin9/kwrt-packages miniupnpd
 rm -rf feeds/small/luci-app-openclash
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
+rm -rf package/feeds/packages/rust
+git_sparse_clone openwrt-24.10 https://github.com/immortalwrt/packages lang/rust
+
 # golong1.24.2依赖
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
