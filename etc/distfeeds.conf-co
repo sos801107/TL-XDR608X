@@ -1,4 +1,4 @@
-src/gz kwrt_core https://dl.openwrt.ai/releases/24.10/targets/amlogic/meson8b/6.6.85
+src/gz kwrt_core https://dl.openwrt.ai/releases/24.10/targets/amlogic/meson8b/6.6.99
 src/gz kwrt_base https://dl.openwrt.ai/releases/24.10/packages/arm_cortex-a5_vfpv4/base
 src/gz kwrt_packages https://dl.openwrt.ai/releases/24.10/packages/arm_cortex-a5_vfpv4/packages
 src/gz kwrt_luci https://dl.openwrt.ai/releases/24.10/packages/arm_cortex-a5_vfpv4/luci
