@@ -103,7 +103,7 @@ jobs:
         sed -i "2isrc-git nas_luci https://github.com/linkease/nas-packages-luci.git;main\n" feeds.conf.default        
         sed -i "3isrc-git turboacc https://github.com/chenmozhijin/turboacc.git;luci\n" feeds.conf.default        
         sed -i "4isrc-git turboaccpackage https://github.com/chenmozhijin/turboacc.git;package\n" feeds.conf.default        
-        sed -i "5isrc-git theme https://github.com/sbwml/luci-theme-argon;openwrt-24.10\n" feeds.conf.default        
+        sed -i "5isrc-git theme https://github.com/sos801107/packages;main\n" feeds.conf.default        
         sed -i "6isrc-git small https://github.com/kenzok8/small;master\n" feeds.conf.default      
         sed -i "7isrc-git kenzo https://github.com/kenzok8/openwrt-packages;master\n" feeds.conf.default  
         
