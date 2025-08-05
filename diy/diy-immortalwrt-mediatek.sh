@@ -98,16 +98,6 @@ rm -rf feeds/packages/net/chinadns-ng
 rm -rf feeds/packages/net/dns2socks
 rm -rf feeds/packages/net/dns2tcp
 rm -rf feeds/packages/net/microsocks
-cp -r feeds/small/xray-core feeds/packages/net
-cp -r feeds/small/mosdns feeds/packages/net
-cp -r feeds/small/v2ray-geodata feeds/packages/net
-cp -r feeds/small/v2ray-geoip feeds/packages/net
-cp -r feeds/small/sing-box feeds/packages/net
-cp -r feeds/small/chinadns-ng feeds/packages/net
-cp -r feeds/small/dns2socks feeds/packages/net
-cp -r feeds/small/ipt2socks feeds/packages/net
-cp -r feeds/small/microsocks feeds/packages/net
-cp -r feeds/small/geoview feeds/packages/net
 
 
 rm -rf feeds/istoreos_ipk/patch/istoreos-files
@@ -176,6 +166,8 @@ git_sparse_clone main https://github.com/kiddin9/kwrt-packages miniupnpd
 rm -rf feeds/small/luci-app-openclash
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
+rm -rf feeds/small/sing-box
+git_sparse_clone main https://github.com/sos801107/packages sing-box
 
 # golong1.24.2依赖
 rm -rf feeds/packages/lang/golang
