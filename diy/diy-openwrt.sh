@@ -48,7 +48,7 @@ rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
 rm -rf feeds/turboaccpackage/nft-fullcone
 rm -rf package/turboacc/nft-fullcone
-
+rm -rf turboacc/nft-fullcone
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
