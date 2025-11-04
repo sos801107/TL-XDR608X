@@ -11,6 +11,11 @@ wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main
 
 mkdir -p files/root
 wget -qO- https://raw.githubusercontent.com/sos801107/TL-XDR608X/refs/heads/main/etc/.profile > files/root/.profile
+
+pushd
+   curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+popd
+
 #修改默认IP地址
 sed -i "s/192\.168\.[0-9]*\.[0-9]*/192.168.1.1/g" ./package/base-files/files/bin/config_generate
 #修改默认主机名
@@ -42,7 +47,8 @@ rm -rf feeds/kenzo/{luci-app-argon-config,luci-theme-argon}
 rm -rf feeds/third/{luci-app-argon-config,luci-theme-argon}
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
-
+rm -rf feeds/turboaccpackage/nft-fullcone
+rm -rf package/turboacc/nft-fullcone
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
@@ -101,10 +107,6 @@ git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/l
 # 必要的补丁
 pushd feeds/luci
    curl -s https://raw.githubusercontent.com/oppen321/path/refs/heads/main/Firewall/0001-luci-mod-status-firewall-disable-legacy-firewall-rul.patch | patch -p1
-popd
-
-pushd
-   curl -sSL https://raw.githubusercontent.com/Jaykwok2999/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 popd
 
 
