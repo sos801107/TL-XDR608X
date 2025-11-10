@@ -50,7 +50,7 @@ rm -rf feeds/packages/libs/libfido2
 
 rm -rf feeds/packages/net/shadowsocks-libev
 rm -rf package/feeds/small/dns2socks
-
+rm -rf feeds/small/dns2socks
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
