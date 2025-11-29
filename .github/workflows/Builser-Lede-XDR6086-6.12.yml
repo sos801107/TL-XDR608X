@@ -187,7 +187,7 @@ jobs:
       with:
         name: LEDE-24.10.2-XDR6086 for ${{ env.DATE }}
         allowUpdates: true
-        tag: Lede_XDR6086
+        tag: Lede_XDR6086-${{ env.FIRMWARE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/LEDE-TP-Link_*.bin
         body: |
