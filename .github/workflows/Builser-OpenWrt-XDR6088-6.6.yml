@@ -173,7 +173,7 @@ jobs:
       with:
         name: OpenWrt-24.10-XDR6088 for ${{ env.DATE }}
         allowUpdates: true
-        tag: OpenWrt-XDR6088
+        tag: OpenWrt-XDR6088-${{ env.FIRMWARE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/OpenWrt-TP-Link_*.itb
         body: |
