@@ -174,7 +174,7 @@ jobs:
       with:
         name: ImmortalWrt-24.10-XDR6086 for ${{ env.DATE }}
         allowUpdates: true
-        tag: ImmortalWrt-XDR6086
+        tag: ImmortalWrt-XDR6086-${{ env.DATE }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/ImmortalWrt-TP-Link_*.itb
         body: |
