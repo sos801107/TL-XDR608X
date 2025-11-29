@@ -201,7 +201,7 @@ jobs:
       with:
         name: ImmortalwWrt-24.10.2-Mediatek for ${{ env.DATE }}
         allowUpdates: true
-        tag: ImmortalwWrt-Mediatek
+        tag: ImmortalwWrt-Mediatek-${{ env.FIRMWARE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*-squashfs-sysupgrade.*
         body: |
