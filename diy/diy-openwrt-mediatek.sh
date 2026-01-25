@@ -86,8 +86,8 @@ function merge_package() {
 }
 
 
-git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall luci-app-passwall
-
+src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main
+src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main
 #git_sparse_clone luci https://github.com/chenmozhijin/turboacc luci-app-turboacc
 
 #git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-mosdns
