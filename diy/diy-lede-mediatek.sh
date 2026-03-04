@@ -91,8 +91,8 @@ git_sparse_clone main https://github.com/Openwrt-Passwall/openwrt-passwall luci-
 #git_sparse_clone main https://github.com/kiddin9/kwrt-packages mosdns
 #git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-tailscale
 #git_sparse_clone main https://github.com/kiddin9/kwrt-packages tailscale
-git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-upnp
-git_sparse_clone main https://github.com/kiddin9/kwrt-packages miniupnpd
+#git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-upnp
+#git_sparse_clone main https://github.com/kiddin9/kwrt-packages miniupnpd
 
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
