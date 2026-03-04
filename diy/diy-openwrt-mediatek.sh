@@ -93,8 +93,8 @@ git_sparse_clone main https://github.com/Openwrt-Passwall/openwrt-passwall luci-
 #git_sparse_clone main https://github.com/kiddin9/kwrt-packages mosdns
 #git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-tailscale
 #git_sparse_clone main https://github.com/kiddin9/kwrt-packages tailscale
-git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-upnp
-git_sparse_clone main https://github.com/kiddin9/kwrt-packages miniupnpd
+#git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-upnp
+#git_sparse_clone main https://github.com/kiddin9/kwrt-packages miniupnpd
 
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
@@ -102,7 +102,7 @@ git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
 # golong1.24.2依赖
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 
 
 # 必要的补丁
